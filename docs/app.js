@@ -58,7 +58,7 @@ const EVALUACIONES_MATRIZ = [
     informe: "W2608PRINF003",
     semana: "Semana 5",
     titulo: "Identificación y evaluación de puntos muertos",
-    detalle: "Inventario y localización de derivaciones, ramales ciegos, instrumentos y conexiones con posible retención o estancamiento, geometría verificable y relación con el régimen hidráulico de recirculación.",
+    detalle: "Inventario y localización de derivaciones en tee, ramales de instrumentos y conexiones feruladas con riesgo de atrapamiento de aire o estancamiento; evaluación geométrica L/D y contraste hidrodinámico frente al ASME BPE Branch Leg Study (> 1,52 m/s para desalojo de bolsas de aire) [7, 23].",
     unidades: { farma: "03", cosmeticos: "10", suplementos: "17", pw: "24" }
   },
   {
@@ -90,7 +90,7 @@ const EVALUACIONES_MATRIZ = [
     informe: "W2608PRINF007",
     semana: "Semana 7",
     titulo: "Propuesta de rediseño y acciones de mejora",
-    detalle: "Formulación de alternativas de modificación geométrica, hidráulica y sanitaria sustentadas en las memorias de cálculo, con prioridades de implementación e integración con el sistema común.",
+    detalle: "Formulación de alternativas de rediseño para JGB sustentadas en cálculo hidráulico y diseño higiénico: sustitución de ramales críticos por tees de ramal corto (ASME BPE Short Order Tees), sellos de diafragma cilíndricos en línea y termopozos de flujo pasante con soldadura orbital sin espacios muertos ni juntas elastoméricas [7, 23].",
     unidades: { farma: "07", cosmeticos: "14", suplementos: "21", pw: "28" }
   }
 ];
@@ -297,6 +297,123 @@ const NORMATIVA = [
   }
 ];
 
+const INST_CONFIGS = {
+  convencional: {
+    badgeClass: "risk-high",
+    badgeText: "RIESGO HIGIÉNICO ALTO · CONFIGURACIÓN CONVENCIONAL EN TEE",
+    title: "1. Tee estándar con conexión ferulada y cuello elevado (L/D convencional)",
+    summary:
+      "Configuración tradicional originada en la industria láctea para desarme manual. En sistemas cerrados de limpieza y sanitización en sitio (CIP/SIP), el ramal vertical cerrado forma una cámara donde queda atrapada una bolsa de aire que ni siquiera la velocidad clásica de 1,52 m/s (5 ft/s) logra desalojar por completo [23].",
+    svg: `
+      <svg class="schematic-svg" viewBox="0 0 500 230" role="img" aria-label="Esquema de tee convencional con bolsa de aire atrapada y riesgo en junta">
+        <rect x="6" y="6" width="488" height="218" rx="8" fill="#FAF9F5" stroke="#E3E1D8" />
+        <!-- Tubería principal horizontal -->
+        <rect x="35" y="135" width="430" height="44" fill="#FFFFFF" stroke="#141413" stroke-width="2" />
+        <!-- Ramal vertical elevado (Dead leg) -->
+        <rect x="215" y="52" width="70" height="85" fill="#FFFFFF" stroke="#141413" stroke-width="2" />
+        <!-- Bolsa de aire atrapada -->
+        <rect x="218" y="55" width="64" height="46" rx="4" fill="rgba(217, 119, 87, 0.22)" stroke="#D97757" stroke-dasharray="4 2" />
+        <text x="250" y="76" text-anchor="middle" fill="#C05F3F" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">BOLSA DE AIRE</text>
+        <text x="250" y="90" text-anchor="middle" fill="#C05F3F" font-family="Plus Jakarta Sans, sans-serif" font-size="8.5">Sin contacto CIP/SIP</text>
+        <!-- Junta elastomérica Tri-Clamp -->
+        <rect x="206" y="46" width="88" height="8" rx="2" fill="#D97757" />
+        <text x="365" y="53" fill="#C05F3F" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">← Junta elastomérica (hendidura / extrusión)</text>
+        <!-- Sonda corta fuera del núcleo -->
+        <line x1="250" y1="22" x2="250" y2="122" stroke="#141413" stroke-width="4" />
+        <circle cx="250" cy="20" r="10" fill="#141413" />
+        <!-- Flujo principal -->
+        <line x1="65" y1="157" x2="185" y2="157" stroke="#435D6B" stroke-width="2.2" />
+        <text x="125" y="150" text-anchor="middle" fill="#435D6B" font-family="JetBrains Mono, monospace" font-size="9.5">Flujo: 1,52 m/s (5 ft/s)</text>
+        <text x="250" y="204" text-anchor="middle" fill="#6B6A65" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Hallazgo en campo (W2608PRINF002 / INF003): Punto muerto L/D + riesgo de falla de sello + error térmico &gt; 5 °C</text>
+      </svg>
+    `,
+    impactoJgb:
+      "En el levantamiento de JGB (W2608PRINF002 y W2608PRINF003) se auditará cada toma de presión, temperatura y muestreo con esta geometría para cuantificar su relación L/D real, estado de empaques y velocidad local en las memorias W2608PRCAL001 a W2608PRCAL004."
+  },
+  intermedia: {
+    badgeClass: "risk-mid",
+    badgeText: "RIESGO HIGIÉNICO MODERADO · TEE INTERMEDIA O RAMAL INFERIOR",
+    title: "2. Tee de ramal reducido o rotación hacia abajo (compromiso de drenabilidad)",
+    summary:
+      "El estudio experimental de ASME BPE verificó que orientar el ramal hacia abajo facilita el desalojo del aire a menor velocidad, pero crea un bolsillo no drenable prohibido por buenas prácticas sanitarias. Las tees intermedias con termopozo soldado manualmente reducen la altura, pero conservan cavidades anulares, sellos y costuras manuales propensas a defectos [23].",
+    svg: `
+      <svg class="schematic-svg" viewBox="0 0 500 230" role="img" aria-label="Esquema de tee intermedia y compromiso entre aire y drenabilidad">
+        <rect x="6" y="6" width="488" height="218" rx="8" fill="#FAF9F5" stroke="#E3E1D8" />
+        <!-- Tubería principal horizontal -->
+        <rect x="35" y="95" width="430" height="44" fill="#FFFFFF" stroke="#141413" stroke-width="2" />
+        <!-- Ramal inferior (No drenable) -->
+        <rect x="215" y="137" width="70" height="52" fill="#FFFFFF" stroke="#141413" stroke-width="2" />
+        <rect x="218" y="155" width="64" height="31" rx="3" fill="rgba(184, 132, 40, 0.22)" stroke="#B88428" stroke-dasharray="4 2" />
+        <text x="250" y="173" text-anchor="middle" fill="#B88428" font-family="JetBrains Mono, monospace" font-size="9" font-weight="600">RETENCIÓN LÍQUIDA</text>
+        <text x="385" y="168" text-anchor="middle" fill="#B88428" font-family="Plus Jakarta Sans, sans-serif" font-size="9.5">Desaloja aire, pero impide autodrenado</text>
+        <!-- Costura manual -->
+        <circle cx="215" cy="139" r="4" fill="#D97757" />
+        <circle cx="285" cy="139" r="4" fill="#D97757" />
+        <text x="250" y="75" text-anchor="middle" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="9.5">Alternativa parcial: ASME BPE Short Order Tee (L/D reducido)</text>
+        <text x="250" y="210" text-anchor="middle" fill="#6B6A65" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Criterio JGB (W2608PRINF005 / INF007): No admitir ramales orientados hacia abajo por pérdida de drenabilidad</text>
+      </svg>
+    `,
+    impactoJgb:
+      "En el diagnóstico de JGB (W2608PRINF005 y W2608PRINF007) se descartará rotar ramales hacia abajo para compensar bajas velocidades; donde persistan derivaciones indispensables se especificará reducción geométrica a tees de ramal corto (ASME BPE Short Order Tees) con verificación de velocidad > 1,52 m/s."
+  },
+  inline_jgb: {
+    badgeClass: "risk-zero",
+    badgeText: "CERO RIESGO HIGIÉNICO · ESTÁNDAR DE REDISEÑO ADOPTADO PARA JGB",
+    title: "3. Instrumentación en línea (Inline / Flow-Through) con soldadura orbital y sin juntas",
+    summary:
+      "Solución de ingeniería adoptada como referencia de diseño y mejora para JGB (W2608PRINF007): sellos de diafragma cilíndricos integrados al diámetro de la tubería para presión y termopozos de flujo pasante con punto de inserción curvo invertido e integración por soldadura orbital para temperatura. Elimina hasta el 90 % de los ramales en tubería, suprime las juntas elastoméricas, mide en el núcleo térmico del flujo y es autodrenable en cualquier orientación [23].",
+    svg: `
+      <svg class="schematic-svg" viewBox="0 0 500 230" role="img" aria-label="Esquema de instrumentación en línea sin espacios muertos con soldadura orbital">
+        <rect x="6" y="6" width="488" height="218" rx="8" fill="#FAF9F5" stroke="#E3E1D8" />
+        <!-- Tubería continua sin ramales (L/D = 0) -->
+        <rect x="35" y="108" width="430" height="46" fill="#FFFFFF" stroke="#4F6F5B" stroke-width="2.2" />
+        <!-- Costuras de soldadura orbital limpias -->
+        <line x1="145" y1="104" x2="145" y2="158" stroke="#D97757" stroke-width="2.5" stroke-dasharray="3 2" />
+        <line x1="355" y1="104" x2="355" y2="158" stroke="#D97757" stroke-width="2.5" stroke-dasharray="3 2" />
+        <text x="145" y="96" text-anchor="middle" fill="#D97757" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600">Soldadura Orbital</text>
+        <text x="355" y="96" text-anchor="middle" fill="#D97757" font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="600">Soldadura Orbital</text>
+        <!-- Sonda curva invertida en el núcleo del flujo (Flow-through thermowell) -->
+        <path d="M 250 42 L 250 131" stroke="#141413" stroke-width="4.5" stroke-linecap="round" />
+        <circle cx="250" cy="131" r="4.5" fill="#D97757" />
+        <circle cx="250" cy="36" r="11" fill="#4F6F5B" />
+        <!-- Flujo laminar/turbulento sin obstrucciones ni bolsas de aire -->
+        <path d="M 60 131 L 235 131" stroke="#4F6F5B" stroke-width="2" />
+        <path d="M 265 131 L 440 131" stroke="#4F6F5B" stroke-width="2" />
+        <text x="250" y="72" text-anchor="middle" fill="#4F6F5B" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">L/D = 0 · Sin juntas (Gasket-free) · Núcleo del flujo</text>
+        <text x="250" y="182" text-anchor="middle" fill="#141413" font-family="Plus Jakarta Sans, sans-serif" font-size="10" font-weight="600">Elimina hasta el 90 % de ramales · Autodrenable en cualquier posición · Calibración sin abrir la línea</text>
+        <text x="250" y="202" text-anchor="middle" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="9">Criterio rector de rediseño en W2608PRINF007 para Anillos Farma, Cosméticos, Suplementos y PW</text>
+      </svg>
+    `,
+    impactoJgb:
+      "En las propuestas de rediseño y mejoras para JGB (W2608PRINF007), toda nueva toma de presión o temperatura y la corrección de puntos muertos críticos priorizarán tecnología en línea (sello cilíndrico de diafragma y termopozo de flujo pasante con soldadura orbital e inserto extraíble estandarizado), eliminando cavidades, empaques y aperturas de línea durante calibraciones trimestrales."
+  }
+};
+
+window.selectInstConfig = function selectInstConfig(configKey) {
+  document.querySelectorAll("[data-inst-btn]").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-inst-btn") === configKey);
+  });
+  const cfg = INST_CONFIGS[configKey];
+  const container = document.getElementById("inst-comparator-view");
+  if (!cfg || !container) return;
+
+  container.innerHTML = `
+    <div style="margin-bottom: 0.75rem;">
+      <span class="risk-badge ${cfg.badgeClass}">${cfg.badgeText}</span>
+    </div>
+    <h3 style="font-family: var(--font-serif); font-size: 1.3rem; font-weight: 500; margin: 0 0 0.55rem; color: var(--ink-primary);">
+      ${cfg.title}
+    </h3>
+    <p style="font-size: 0.88rem; color: var(--ink-secondary); line-height: 1.6; margin: 0 0 1rem; text-align: justify;">
+      ${cfg.summary}
+    </p>
+    ${cfg.svg}
+    <div class="loop-detail-banner" style="margin-top: 0.95rem;">
+      <strong>Aplicación directa en JGB (W2608):</strong> ${cfg.impactoJgb}
+    </div>
+  `;
+};
+
 /* ==========================================================================
    Inicialización de Interacciones
    ========================================================================== */
@@ -304,6 +421,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSchematicNodes();
   renderMatrixTable("all");
   selectUnit("01");
+  selectInstConfig("inline_jgb");
   renderDeliverables("ALL", "");
   renderNormativa("all");
   initFilterControls();

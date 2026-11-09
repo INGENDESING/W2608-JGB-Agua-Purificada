@@ -31,11 +31,12 @@
         <a href="#alcance">1. Alcance y Equipo</a>
         <a href="#matriz">2. Matriz 28 Unidades</a>
         <a href="#componentes">3. Componentes (12)</a>
-        <a href="#entregables">4. Entregables (13)</a>
-        <a href="#metodologia">5. Metodología</a>
-        <a href="#normativa">6. Normativa</a>
-        <a href="#cronograma">7. Cronograma</a>
-        <a href="#referencias">8. Alcance y Referencias</a>
+        <a href="#instrumentacion">4. Instrumentación y Diseño JGB</a>
+        <a href="#entregables">5. Entregables (13)</a>
+        <a href="#metodologia">6. Metodología</a>
+        <a href="#normativa">7. Normativa</a>
+        <a href="#cronograma">8. Cronograma</a>
+        <a href="#referencias">9. Alcance y Referencias</a>
       </nav>
 
       <div class="header-badge">W2608 · Rev. 0</div>
@@ -388,7 +389,7 @@
             <tr>
               <td><strong>4. Juntas, diafragmas y sellos</strong></td>
               <td>EPDM, PTFE, silicona u otros elastómeros/fluoropolímeros identificados</td>
-              <td>Estado físico, compresión y montaje, intrusión en la vena fluida o retracción, compatibilidad con ciclos de sanitización y trazabilidad del compuesto [5, 7, 8, 20].</td>
+              <td>Estado físico, par de apriete, prevención de hendiduras por sub-apriete o extrusión/desprendimiento de partículas por sobre-apriete, compatibilidad con sanitización y evaluación para su eliminación mediante integración orbital en línea [5, 7, 8, 20, 23].</td>
             </tr>
             <tr>
               <td><strong>5. Válvulas de diafragma y puntos de uso</strong></td>
@@ -408,7 +409,7 @@
             <tr>
               <td><strong>8. Accesorios y conexiones sanitarias</strong></td>
               <td>Codos, tees, reducciones concéntricas/excéntricas, férulas Tri-Clamp y uniones desmontables</td>
-              <td>Compatibilidad dimensional (serie de tubo), alineación axial, ausencia de escalones y hendiduras, correcto asiento de juntas y zonas de retención; referencias ASME BPE y 3-A 63-04 [7, 19].</td>
+              <td>Compatibilidad dimensional (serie de tubo), alineación axial, ausencia de escalones y hendiduras, correcto asiento de juntas y zonas de retención; referencias ASME BPE y 3-A 63-04 [7, 19, 23].</td>
             </tr>
             <tr>
               <td><strong>9. Uniones soldadas</strong></td>
@@ -423,7 +424,7 @@
             <tr>
               <td><strong>11. Muestreo e instrumentación en línea</strong></td>
               <td>Tomas de muestra sanitarias y sensores de caudal, presión, temperatura, conductividad y TOC</td>
-              <td>Ubicación representativa (suministro/retorno), longitud de racores de inserción, calibración vigente, limpiabilidad y correspondencia con las variables del modelo hidráulico [3–7].</td>
+              <td>Ubicación en el núcleo del flujo (compensación de gradiente térmico radial &gt; 5 °C), eliminación de ramales muertos mediante medición en línea libre de cavidades, calibración sin apertura de proceso y correspondencia con el modelo hidráulico [3–7, 23].</td>
             </tr>
             <tr>
               <td><strong>12. Instalación, pendientes y soportación</strong></td>
@@ -436,14 +437,211 @@
     </div>
   </section>
 
-  <!-- ==================== 4. LISTADO MAESTRO DE 13 ENTREGABLES ==================== -->
-  <section id="entregables" class="section-block alt-bg">
+  <!-- ==================== 4. INGENIERÍA DE CONEXIONES DE INSTRUMENTACIÓN Y DISEÑO PARA JGB ==================== -->
+  <section id="instrumentacion" class="section-block alt-bg">
     <div class="container">
       <div class="section-header">
-        <span class="section-index">Sección 04 · Control Documental (W2608PRLIS001)</span>
+        <span class="section-index">Sección 04 · Criterios Avanzados de Diseño Higiénico para JGB (ASME BPE Branch Leg Study)</span>
+        <h2 class="section-title">Mitigación de riesgos de contaminación en conexiones de instrumentación aplicada a los diseños para JGB</h2>
+        <p class="section-prose">
+          En los sistemas de agua purificada y procesamiento biofarmacéutico, las conexiones de instrumentos (presión, temperatura, conductividad y muestreo) representan más de la mitad de los puntos de inserción de una planta y constituyen uno de los puntos críticos de ingreso o retención microbiana, química y particulada [23]. Los diagnósticos, memorias de cálculo y propuestas de rediseño que se elaborarán para <strong>JGB</strong> en los anillos <strong>Farma</strong>, <strong>Cosméticos</strong>, <strong>Suplementos</strong>, <strong>PW</strong> y el <strong>tanque pulmón de 3.000 L</strong> incorporan de forma obligatoria los hallazgos del estudio experimental de ramales de <strong>ASME BPE (<em>Branch Leg Study</em>)</strong> y las tecnologías de medición en línea libres de espacios muertos [7, 23].
+        </p>
+        <p class="section-prose">
+          La secuencia lógica de evaluación para JGB parte de la física del atrapamiento de aire y la mecánica de sellos en conexiones convencionales, contrasta las limitaciones del criterio clásico de velocidad frente a la drenabilidad gravitacional, y establece las especificaciones de ingeniería que regirán las recomendaciones de mejora del informe <span class="code-pill">W2608PRINF007</span>.
+        </p>
+      </div>
+
+      <!-- Paso 1: Los 4 fenómenos físicos y de diseño demostrados en el artículo -->
+      <div class="inst-phenomena-grid">
+        <article class="phenom-card">
+          <div>
+            <div class="phenom-step">01 · Atrapamiento de Aire</div>
+            <h3>Insuficiencia del umbral clásico de 1,52 m/s (5 ft/s)</h3>
+            <p>
+              Las conexiones en tee con abrazaderas feruladas (<em>Tri-Clamp</em>), originadas hace más de 50 años para limpieza manual en la industria láctea, crean puntos muertos (<em>dead legs</em>) durante la limpieza y sanitización en sitio (CIP/SIP). Aunque el estándar evolucionó de $L/D \le 6$ a $L/D &lt; 2$ asumiendo que una velocidad turbulenta tangencial de 1,52 m/s (5 ft/s) garantizaba la limpieza, el <em>ASME BPE Branch Leg Study</em> demostró experimentalmente que a 1,52 m/s no se desaloja todo el aire atrapado en una tee vertical estándar, impidiendo el contacto de la solución sanitizante con la pared superior del ramal [23].
+            </p>
+          </div>
+          <div class="phenom-metric">
+            Criterio JGB: Verificar en W2608PRCAL001–004 velocidades &gt; 1,52 m/s y desalojo efectivo de aire en cada tee.
+          </div>
+        </article>
+
+        <article class="phenom-card">
+          <div>
+            <div class="phenom-step">02 · Paradoja de Orientación</div>
+            <h3>Conflicto entre desalojo de aire y autodrenabilidad</h3>
+            <p>
+              Los ensayos del estudio ASME BPE comprobaron que la bolsa de aire se desplaza con mayor facilidad en una tubería horizontal cuando el ramal de la tee se rota apuntando verticalmente hacia abajo. Sin embargo, dicha orientación es inaceptable para la sanitización/esterilización y contraria a las directrices de drenabilidad de ASME BPE, pues crea un pozo de retención gravitacional donde se acumulan líquido residual, condensado y contaminantes tras el vaciado de la línea [7, 23].
+            </p>
+          </div>
+          <div class="phenom-metric">
+            Criterio JGB: Prohibir ramales orientados hacia abajo; reducir longitud con Short Order Tees o eliminar el ramal.
+          </div>
+        </article>
+
+        <article class="phenom-card">
+          <div>
+            <div class="phenom-step">03 · Mecánica de Empaques</div>
+            <h3>Riesgo dual en juntas elastoméricas e impacto en lotes</h3>
+            <p>
+              Las juntas elastoméricas de uniones feruladas introducen dos modos de falla: el sub-apriete (<em>under-tightening</em>) genera hendiduras capilares (<em>crevices</em>) donde se aloja biopelícula fuera del alcance del sanitizante; el sobre-apriete (<em>over-tightening</em>) extruye y degrada el empaque hacia la vena fluida, restringiendo el drenaje y liberando micropartículas al proceso. Una desviación originada en un sello deficiente escala exponencialmente con el tamaño del lote en costos de paro, investigación, acciones correctivas (CAPA) y pérdida de producto [23].
+            </p>
+          </div>
+          <div class="phenom-metric">
+            Criterio JGB: Priorizar integración en línea soldada orbitalmente (gasket-free) en puntos críticos.
+          </div>
+        </article>
+
+        <article class="phenom-card">
+          <div>
+            <div class="phenom-step">04 · Termometría Precisa</div>
+            <h3>Gradiente térmico radial &gt; 5 °C y calibración en sitio</h3>
+            <p>
+              La medición de temperatura representa más del 50 % de los puntos de instrumentación y controla la eficacia térmica de la sanitización. Incluso en régimen turbulento, la temperatura del agua en el núcleo del flujo puede diferir en más de 5 °C respecto a la pared de la tubería. Los termopozos convencionales elevan el punto de inserción creando espacio muerto; el diseño para JGB contempla termopozos de flujo pasante (<em>flow-through</em>) que registran en el centro térmico sin obstruir el paso y permiten calibración mediante inserto extraíble sin abrir la tubería [23].
+            </p>
+          </div>
+          <div class="phenom-metric">
+            Criterio JGB: Medición en el núcleo del flujo + calibración trimestral sin romper integridad sanitaria.
+          </div>
+        </article>
+      </div>
+
+      <!-- Paso 2: Comparador interactivo de geometrías de conexión y panel de directrices JGB -->
+      <div class="inst-comparator">
+        <div class="inst-diagram-panel">
+          <div class="schematic-header">
+            <span class="schematic-title">Comparador de Geometrías de Conexión de Instrumentos [23]</span>
+            <span class="code-pill">W2608PRINF003 / INF007</span>
+          </div>
+
+          <div class="filter-pills" role="group" aria-label="Seleccionar configuración de conexión de instrumento" style="margin-bottom: 1rem;">
+            <button type="button" class="filter-btn" data-inst-btn="convencional" onclick="selectInstConfig('convencional')">1. Tee Convencional Ferulada</button>
+            <button type="button" class="filter-btn" data-inst-btn="intermedia" onclick="selectInstConfig('intermedia')">2. Tee Intermedia / Ramal Inferior</button>
+            <button type="button" class="filter-btn active" data-inst-btn="inline_jgb" onclick="selectInstConfig('inline_jgb')">3. Estándar de Rediseño JGB (Inline / Flow-Through)</button>
+          </div>
+
+          <div id="inst-comparator-view"></div>
+        </div>
+
+        <aside class="inst-jgb-panel">
+          <div>
+            <span class="section-index" style="margin-bottom: 0.35rem;">Aplicación Obligatoria en JGB · Cali</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin: 0 0 0.65rem; color: var(--ink-on-dark);">
+              Cinco directrices de ingeniería que gobernarán los diseños y mejoras para JGB
+            </h3>
+            <p style="font-size: 0.87rem; color: var(--ink-muted-on-dark); line-height: 1.58; margin: 0;">
+              Todas las recomendaciones de modificación y rediseño en los anillos Farma, Cosméticos, Suplementos, PW y el tanque de 3.000 L se formularán bajo estas cinco reglas derivadas de la evidencia experimental [23]:
+            </p>
+
+            <div class="jgb-design-rules">
+              <div class="jgb-rule-item">
+                <strong>Directriz 1 · Eliminación de hasta el 90 % de ramales en tubería</strong>
+                <span>Sustitución de derivaciones en tee innecesarias por instrumentación integrada directamente en la línea de proceso (<em>L/D = 0</em>), suprimiendo cámaras de atrapamiento de aire y turbulencias parásitas.</span>
+              </div>
+              <div class="jgb-rule-item">
+                <strong>Directriz 2 · Sellos de diafragma cilíndricos en línea para presión</strong>
+                <span>Especificación de sellos de diafragma concéntricos de paso total (<em>inline diaphragm seals</em>) que mantienen el diámetro interno de la tubería libre de esquinas, obstrucciones y zonas muertas.</span>
+              </div>
+              <div class="jgb-rule-item">
+                <strong>Directriz 3 · Termopozos de flujo pasante con soldadura orbital</strong>
+                <span>Incorporación mediante soldadura orbital de termopozos conformados con inserción curva invertida libre de hendiduras, eliminando juntas elastoméricas en contacto con el agua purificada y garantizando drenaje en cualquier posición.</span>
+              </div>
+              <div class="jgb-rule-item">
+                <strong>Directriz 4 · Calibración en sitio sin apertura del anillo sanitario</strong>
+                <span>Estandarización de insertos de temperatura extraíbles de igual longitud para distintos diámetros nominales, permitiendo calibración periódica sin abrir el proceso, sin riesgo de contaminación exógena y sin consumo adicional de agua por re-sanitización.</span>
+              </div>
+              <div class="jgb-rule-item">
+                <strong>Directriz 5 · Uso de ASME BPE Short Order Tees y velocidad verificada</strong>
+                <span>En los puntos donde una derivación sea funcionalmente indispensable, se especificarán tees de ramal ultracorto (<em>ASME BPE Short Order Tees</em>) verificando en el modelo hidráulico que la velocidad local desaloje completamente el aire (&gt; 1,52 m/s).</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Paso 3: Tabla Elsevier de trazabilidad hacia los entregables de JGB -->
+      <div class="table-wrapper">
+        <div class="table-caption">
+          <span>Tabla 4.</span> Integración de los criterios de control de contaminación en conexiones de instrumentación dentro de los entregables para JGB [7, 23].
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">Riesgo o desafío identificado en la literatura [23]</th>
+              <th style="width: 28%;">Mecanismo físico, químico o sanitario</th>
+              <th style="width: 34%;">Consideración y solución de diseño que se aplicará en JGB</th>
+              <th style="width: 16%;">Entregable JGB donde se ejecuta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bolsas de aire en tees de instrumentos a 1,52 m/s (5 ft/s)</strong></td>
+              <td>El flujo tangencial de 1,52 m/s no desaloja todo el aire en tees verticales estándar con $L/D &lt; 2$, impidiendo que el agente de limpieza/sanitización contacte la superficie interna superior.</td>
+              <td>Simulación de velocidades locales en cada derivación de los cuatro anillos; identificación de tramos con velocidad insuficiente y propuesta de paso a configuración en línea o <em>ASME BPE Short Order Tee</em>.</td>
+              <td>
+                <span class="code-pill">W2608PRINF003</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRCAL001–004</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Falla de juntas en uniones feruladas (<em>Tri-Clamp</em>)</strong></td>
+              <td>El sub-apriete crea hendiduras capilares con retención microbiana; el sobre-apriete extruye la junta, obstruye el autovaciado y desprende partículas elastoméricas al agua.</td>
+              <td>Inspección en campo del estado de montaje y compresión de empaques; reducción del número de uniones feruladas en el rediseño mediante integración por soldadura orbital libre de juntas.</td>
+              <td>
+                <span class="code-pill">W2608PRINF002</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRINF007</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Error térmico pared-núcleo (&gt; 5 °C) y cuellos de termopozo</strong></td>
+              <td>La temperatura en el centro de la tubería supera hasta en más de 5 °C la de la pared; los termopozos convencionales introducen un cuello elevado no drenable o interfieren con el flujo.</td>
+              <td>Especificación para JGB de termopozos sanitarios de flujo pasante (<em>flow-through</em>) con inserción curva invertida hacia el núcleo térmico, sin cavidades y drenables en cualquier ángulo de montaje.</td>
+              <td>
+                <span class="code-pill">W2608PRINF004</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRINF007</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Apertura del sistema durante calibraciones periódicas</strong></td>
+              <td>Desmontar sensores en contacto directo rompe la integridad sanitaria del anillo, introduce riesgo de contaminación ambiental y obliga a re-limpiar y re-sanitizar la tubería.</td>
+              <td>Adopción de insertos de medición extraíbles de longitud estandarizada que permiten calibración en sitio sin abrir el proceso, ahorrando agua purificada, tiempo de parada y riesgos de desviación.</td>
+              <td>
+                <span class="code-pill">W2608PRINF007</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRINF008</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Toma de presión con cámaras o obstrucción de flujo</strong></td>
+              <td>Los manómetros y transmisores montados sobre tees feruladas generan turbulencias secundarias, esquinas muertas y zonas de acumulación post-lavado.</td>
+              <td>Especificación de sellos de diafragma cilíndricos en línea (<em>inline diaphragm seals</em>) montados directamente en la tubería para preservar el perfil de flujo sin espacios muertos.</td>
+              <td>
+                <span class="code-pill">W2608PRINF005</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRINF007</span>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Contaminación inorgánica, orgánica y desviaciones de lote</strong></td>
+              <td>La degradación de sellos, corrosión en hendiduras o limpieza incompleta introduce impurezas y bioburden cuyo costo de desviación (investigación, paro y reproceso) crece exponencialmente.</td>
+              <td>Ponderación del riesgo de contaminación por componente dentro de la matriz de criticidad de JGB y trazabilidad con el monitoreo de conductividad, TOC y microbiología (USP &lt;643&gt;, &lt;645&gt;, &lt;1231&gt;).</td>
+              <td>
+                <span class="code-pill">W2608PRINF005</span><br />
+                <span class="code-pill" style="margin-top:0.25rem;">W2608PRINF006</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. LISTADO MAESTRO DE 13 ENTREGABLES ==================== -->
+  <section id="entregables" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 05 · Control Documental (W2608PRLIS001)</span>
         <h2 class="section-title">Listado maestro de los 13 documentos entregables del estudio</h2>
         <p class="section-prose">
-          El alcance documental del diagnóstico comprende trece entregables técnicos codificados bajo la convención compacta del proyecto (`W2608` + especialidad `PR` + tipo `INF`, `CAL` o `LIS` + consecutivo de tres dígitos): siete informes de evaluación transversal, un informe general ejecutivo, cuatro memorias de cálculo hidráulico por anillo y el listado maestro de documentos (Tabla 4). Cada informe de evaluación incorpora el sustento hidráulico de los cuatro anillos referenciando el escenario y la revisión correspondiente de las memorias `W2608PRCAL001` a `W2608PRCAL004`.
+          El alcance documental del diagnóstico comprende trece entregables técnicos codificados bajo la convención compacta del proyecto (`W2608` + especialidad `PR` + tipo `INF`, `CAL` o `LIS` + consecutivo de tres dígitos): siete informes de evaluación transversal, un informe general ejecutivo, cuatro memorias de cálculo hidráulico por anillo y el listado maestro de documentos (Tabla 5). Cada informe de evaluación incorpora el sustento hidráulico de los cuatro anillos referenciando el escenario y la revisión correspondiente de las memorias `W2608PRCAL001` a `W2608PRCAL004`.
         </p>
       </div>
 
@@ -467,7 +665,7 @@
 
       <div class="table-wrapper">
         <div class="table-caption" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-          <div><span>Tabla 4.</span> Listado maestro de los trece documentos técnicos del estudio (W2608PRLIS001).</div>
+          <div><span>Tabla 5.</span> Listado maestro de los trece documentos técnicos del estudio (W2608PRLIS001).</div>
           <div id="deliverables-count" style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted);">Mostrando 13 de 13 documentos técnicos planificados</div>
         </div>
         <table class="elsevier-table">
@@ -487,14 +685,14 @@
     </div>
   </section>
 
-  <!-- ==================== 5. METODOLOGÍA DE INGENIERÍA ==================== -->
-  <section id="metodologia" class="section-block">
+  <!-- ==================== 6. METODOLOGÍA DE INGENIERÍA ==================== -->
+  <section id="metodologia" class="section-block alt-bg">
     <div class="container">
       <div class="section-header">
-        <span class="section-index">Sección 05 · Rigor Técnico y Modelado Fisicoquímico</span>
+        <span class="section-index">Sección 06 · Rigor Técnico y Modelado Fisicoquímico</span>
         <h2 class="section-title">Secuencia metodológica en siete etapas y bases del modelo</h2>
         <p class="section-prose">
-          La metodología articula la revisión crítica de planos y reportes, el levantamiento coordinado en planta, el modelado hidráulico estacionario y la evaluación sanitaria y de seguridad de procesos en siete etapas consecutivas (Tabla 5). Cada etapa genera un producto verificable que sirve de entrada trazable a la etapa siguiente.
+          La metodología articula la revisión crítica de planos y reportes, el levantamiento coordinado en planta, el modelado hidráulico estacionario y la evaluación sanitaria, de instrumentación y de seguridad de procesos en siete etapas consecutivas. Cada etapa genera un producto verificable que sirve de entrada trazable a la etapa siguiente.
         </p>
       </div>
 
@@ -618,14 +816,14 @@
     </div>
   </section>
 
-  <!-- ==================== 6. MARCO NORMATIVO Y FUNDAMENTO SANITARIO ==================== -->
+  <!-- ==================== 7. MARCO NORMATIVO Y FUNDAMENTO SANITARIO ==================== -->
   <section id="normativa" class="section-block">
     <div class="container">
       <div class="section-header">
-        <span class="section-index">Sección 06 · Regulación Sectorial y Estándares de Ingeniería</span>
+        <span class="section-index">Sección 07 · Regulación Sectorial y Estándares de Ingeniería</span>
         <h2 class="section-title">Marco normativo y fundamento sanitario por uso y anillo</h2>
         <p class="section-prose">
-          El agua purificada constituye una materia prima y un servicio crítico cuya calidad fisicoquímica y microbiológica debe preservarse desde la generación y el almacenamiento en el tanque de 3.000 L hasta cada punto de uso. La aplicabilidad normativa se determina por el producto, proceso y uso de cada anillo, articulando la regulación obligatoria (MSPS y Comunidad Andina) con las farmacopeas y los estándares internacionales de ingeniería higiénica (Tabla 6) [1–17].
+          El agua purificada constituye una materia prima y un servicio crítico cuya calidad fisicoquímica y microbiológica debe preservarse desde la generación y el almacenamiento en el tanque de 3.000 L hasta cada punto de uso. La aplicabilidad normativa se determina por el producto, proceso y uso de cada anillo, articulando la regulación obligatoria (MSPS y Comunidad Andina) con las farmacopeas y los estándares internacionales de ingeniería higiénica (Tabla 6) [1–17, 23].
         </p>
       </div>
 
@@ -658,11 +856,11 @@
     </div>
   </section>
 
-  <!-- ==================== 7. CRONOGRAMA TÉCNICO Y RECURSOS ==================== -->
+  <!-- ==================== 8. CRONOGRAMA TÉCNICO Y RECURSOS ==================== -->
   <section id="cronograma" class="section-block alt-bg">
     <div class="container">
       <div class="section-header">
-        <span class="section-index">Sección 07 · Planificación Temporal e Infraestructura de Simulación</span>
+        <span class="section-index">Sección 08 · Planificación Temporal e Infraestructura de Simulación</span>
         <h2 class="section-title">Cronograma técnico de ocho semanas, visitas de campo y herramientas</h2>
         <p class="section-prose">
           El horizonte de ejecución técnica comprende ocho semanas a partir del inicio acordado con disponibilidad de planos, datos básicos de operación y acceso autorizado a planta. Se contemplan tres visitas técnicas de campo en las semanas 1, 2 y 6, coordinadas por Javier Micolta. El modelado de los cuatro anillos se desarrolla en paralelo durante las semanas 2 a 4, y las verificaciones de la tercera visita se integran en la edición de cierre en la semana 8 (Tabla 7).
@@ -880,51 +1078,51 @@
     </div>
   </section>
 
-  <!-- ==================== 8. DELIMITACIONES TÉCNICAS Y REFERENCIAS ==================== -->
+  <!-- ==================== 9. DELIMITACIONES TÉCNICAS Y REFERENCIAS ==================== -->
   <section id="referencias" class="section-block">
     <div class="container">
       <div class="section-header">
-        <span class="section-index">Sección 08 · Rigor de Evidencia y Fuentes Primarias</span>
-        <h2 class="section-title">Criterios de delimitación técnica y 22 referencias verificadas</h2>
+        <span class="section-index">Sección 09 · Rigor de Evidencia y Fuentes Primarias</span>
+        <h2 class="section-title">Criterios de delimitación técnica y 23 referencias verificadas</h2>
         <p class="section-prose">
-          El desarrollo del diagnóstico se rige por los numerales de delimitación técnica 8.1 a 8.7 y se sustenta en las veintidós fuentes regulatorias y normativas listadas a continuación, verificadas con enlace directo y fecha de consulta.
+          El desarrollo del diagnóstico se rige por los numerales de delimitación técnica 9.1 a 9.6 y se sustenta en las veintitrés fuentes regulatorias, normativas y de investigación experimental listadas a continuación.
         </p>
       </div>
 
       <div class="clauses-grid" style="margin-bottom: 3rem;">
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.1 · Alcance sobre ensayos no destructivos</span>
+          <span class="clause-num">Numeral 9.1 · Alcance sobre ensayos no destructivos</span>
           <p>La evaluación de videoscopia y tintas penetrantes comprende la interpretación técnica de los informes de ensayo suministrados sobre el tanque pulmón de 3.000 L y zonas inspeccionadas, vinculando las indicaciones reportadas con su incidencia sanitaria e hidráulica en cada anillo.</p>
         </div>
 
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.2 · Carácter no interventivo en planta</span>
+          <span class="clause-num">Numeral 9.2 · Carácter no interventivo en planta</span>
           <p>El diagnóstico es un estudio de ingeniería de evaluación y diseño conceptual/básico de mejoras; no comprende intervención física de la instalación, corte o soldadura, desmontaje de líneas, limpieza química ni suministro de repuestos.</p>
         </div>
 
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.3 · Alcance frente a certificación regulatoria</span>
+          <span class="clause-num">Numeral 9.3 · Alcance frente a certificación regulatoria</span>
           <p>El estudio entrega soporte técnico trazable para la toma de decisiones de ingeniería y calidad de JGB; no sustituye actos administrativos de certificación BPM, autorizaciones de uso del símbolo 3-A ni protocolos de calificación de instalación/operación/desempeño (IQ/OQ/PQ) [22].</p>
         </div>
 
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.4 · Independencia de evidencias</span>
+          <span class="clause-num">Numeral 9.4 · Independencia de evidencias</span>
           <p>La calidad fisicoquímica y microbiológica del agua y la sanidad interna de las soldaduras se sustentan en sus propios ensayos y monitoreos analíticos; las memorias hidráulicas (`W2608PRCAL001`–`004`) evalúan el comportamiento fluido-dinámico y no reemplazan los ensayos metalúrgicos o microbiológicos.</p>
         </div>
 
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.5 · Criterios cuantitativos por norma aplicable</span>
-          <p>Los criterios de rugosidad superficial, relación geométrica de puntos muertos, pendientes de drenaje y velocidades de retorno se establecen según el texto autorizado de la norma aplicable al uso de cada anillo, sin extrapolar exigencias de agua para inyección (WFI) a sistemas de agua purificada (PW) [5–9].</p>
+          <span class="clause-num">Numeral 9.5 · Criterios cuantitativos por norma aplicable</span>
+          <p>Los criterios de rugosidad superficial, relación geométrica de puntos muertos, pendientes de drenaje y velocidades de retorno se establecen según el texto autorizado de la norma aplicable al uso de cada anillo y los hallazgos del <em>ASME BPE Branch Leg Study</em>, sin extrapolar exigencias de agua para inyección (WFI) a sistemas de agua purificada (PW) [5–9, 23].</p>
         </div>
 
         <div class="clause-box">
-          <span class="clause-num">Numeral 8.6 · Trazabilidad de datos y zonas no accesibles</span>
+          <span class="clause-num">Numeral 9.6 · Trazabilidad de datos y zonas no accesibles</span>
           <p>Los materiales, válvulas y accesorios de la Tabla 3 se verifican contra certificados, planos e inspección visual autorizada. Todo tramo oculto o componente sin soporte documental queda registrado explícitamente como pendiente de verificación con evaluación de su riesgo asociado.</p>
         </div>
       </div>
 
       <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin: 0 0 1.25rem;">
-        Referencias normativas, regulatorias y técnicas [1–22]
+        Referencias normativas, regulatorias y técnicas [1–23]
       </h3>
 
       <div class="refs-grid">
@@ -950,6 +1148,7 @@
         <div class="ref-item"><span class="ref-idx">[20]</span><div>3-A Sanitary Standards, Inc. <a href="https://www.3-a.org/news/nonmetal-surfaces-whats-new" target="_blank" rel="noopener">Nonmetal Surfaces — What's New?</a> Criterios de uso y degradación de superficies no metálicas. Consulta: 19/10/2026.</div></div>
         <div class="ref-item"><span class="ref-idx">[21]</span><div>JGB. Requerimientos de usuario FO-AS-150 y planos 17-PT-A-G-0017 y 18-PT-A-G-0018, suministrados como documentos base para el diagnóstico del sistema de agua purificada en Cali.</div></div>
         <div class="ref-item"><span class="ref-idx">[22]</span><div>INVIMA. <a href="https://www.invima.gov.co/cosmeticos-aseo-plaguicidas/cosmeticos" target="_blank" rel="noopener">Cosméticos: marco normativo y preguntas frecuentes</a>. Orientación institucional regulatoria aplicable. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[23]</span><div>Langhauser, K.; Vogel, J. D.; Muth, M.; Eustis, M.; Velez, G.; Zipp, J. <em>Addressing Process Contamination Risks Introduced by Instrument Connections: Beyond Compliance (ASME BPE Branch Leg Study) &amp; Inline Measurement Technologies</em>. Pharmaceutical Manufacturing Special Report, pp. 1–16. Base documental en <code>00_bases_diseno/ArticuloDiseño/</code>.</div></div>
       </div>
     </div>
   </section>
