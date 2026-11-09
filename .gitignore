@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# LaTeX (auxiliares — mantener solo .tex y .pdf final)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.spl
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Excel temporales
+~$*.xlsx
+
+# Entregables intermedios (mantener solo REV*/)
+06_entregables/_draft/
+
+# Cachés locales, herramientas portables y carpeta molde
+task/
+Plantilla/
+
+# Archivos comerciales, de oferta y memoria interna (no publicar en repositorio público)
+1.0 Oferta/
+00_bases_diseno/bases_diseno.yaml
+02_informe_tex/*oferta*
+02_informe_tex/oferta/
+06_entregables/REV0/*oferta*
+06_entregables/REV0/W2608PRDOC001*
+06_entregables/REV0/fuentes/
+06_entregables/listado_documentos.csv
+scripts/*oferta*
+contexto.md
+contexto_historico.md
+memoria/
+.agents/
+skills/
+AGENTS.md
+GEMINI.md
+inicio.md
+inicializar.md

@@ -1,0 +1,44 @@
+\section{Resultados}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Resultados experimentales del proyecto}
+	\label{tab:results}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}NllXcc@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Ensayo} & \textbf{Concentración} & \textbf{Descripción} & \textbf{pH} & \textbf{Rendimiento} \\
+		\midrule
+		& A & 0.1 mol/L & Condición estándar & 7.2 ± 0.1 & 92.5\% \\
+		& B & 0.5 mol/L & Condición optimizada & 6.8 ± 0.2 & 94.2\% \\
+		& C & 1.0 mol/L & Condición máxima & 6.5 ± 0.1 & 95.8\% \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+% Ejemplo de gráfica vectorial pgfplots alimentada desde Python.
+% Regenerar los datos con: uv run 01_calculos/memorias/MC-002_grafica_moody.py
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}
+		\begin{loglogaxis}[
+			width=0.85\textwidth,
+			height=0.5\textwidth,
+			xlabel={Número de Reynolds, $Re$},
+			ylabel={Factor de fricción de Darcy, $f$},
+			grid=both,
+			minor grid style={gray!15},
+			major grid style={gray!40},
+			legend style={at={(0.02,0.02)}, anchor=south west, font=\small},
+			line width=0.8pt,
+		]
+			\addplot[black]                table[x=Re, y=f_eps0,      col sep=comma] {assets/moody_churchill.csv};
+			\addplot[blue]                 table[x=Re, y=f_eps0.0001, col sep=comma] {assets/moody_churchill.csv};
+			\addplot[red]                  table[x=Re, y=f_eps0.0004, col sep=comma] {assets/moody_churchill.csv};
+			\addplot[green!50!black]       table[x=Re, y=f_eps0.001,  col sep=comma] {assets/moody_churchill.csv};
+			\legend{$\varepsilon/D=0$, $\varepsilon/D=10^{-4}$, $\varepsilon/D=4\times10^{-4}$, $\varepsilon/D=10^{-3}$}
+		\end{loglogaxis}
+	\end{tikzpicture}
+	\caption{Factor de fricción de Darcy según la correlación de Churchill (1977), calculado por \texttt{MC-002\_grafica\_moody.py}.}
+	\label{fig:moody}
+\end{figure}

@@ -1,0 +1,56 @@
+auto_generation:
+  debounce_delay: 2.0
+  watch_latex_files: true
+  watched_files:
+  - config/preamble.tex
+  - config/header.tex
+  - sections/00_portada.tex
+  - W2608PRINF001 Rev0.tex
+  - config/membrete_config.yaml
+company:
+  address: null
+  email: null
+  logo_path: logos/logo_JAGDESING.png
+  name: "J.Arboleda"
+  nit: null
+  phone: null
+  website: null
+document:
+  code_pattern: W2608PRINF001
+  current_year: 26
+  default_category: INF
+  default_type: PR
+element_positions:
+  company_info:
+    x: 90
+    y: 775
+  contact_info:
+    x: 20
+    y: 745
+  document_info:
+    x: 400
+    y: 775
+  logo:
+    x: 20
+    y: 775
+layout:
+  header_height: 120
+  logo_height: 40
+  logo_width: 60
+  margins:
+    bottom: 25
+    left: 20
+    right: 20
+    top: 45
+  page_size: Letter
+styling:
+  accent_color: '#2ecc71'
+  border_radius: 0
+  font_family: Helvetica
+  line_width: 0.5
+  normal_text_size: 9
+  primary_color: '#1a5490'
+  secondary_color: '#ffffff'
+  subtitle_size: 10
+  text_color: '#333333'
+  title_size: 14

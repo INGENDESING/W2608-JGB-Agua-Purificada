@@ -1,0 +1,64 @@
+% ===================== ENCABEZADO NATIVO =====================
+\newcommand{\empresaheader}{%
+\begingroup\normalfont\normalsize\setlength{\tabcolsep}{6pt}%
+	\renewcommand{\arraystretch}{0.80} % Comprime la altura de las filas
+	\noindent
+	\begin{tabularx}{\textwidth}{| >{\centering\arraybackslash}p{2.5cm} | >{\centering\arraybackslash}p{2.5cm} | >{\centering\arraybackslash}X | p{2cm} | p{3cm} |}
+		\hline
+		% Fila 1
+		\multirow{5}{*}{\includegraphics[width=2.3cm,height=1.2cm,keepaspectratio]{logos/logo1.png}} & 
+		\multirow{5}{*}{\includegraphics[width=2.3cm,height=1.2cm,keepaspectratio]{logos/logo2.png}} & 
+		\multirow{2}{\linewidth}{\centering \scriptsize SERVICIOS DE INGENIERÍA} & 
+		\scriptsize \textbf{CÓDIGO:} & \scriptsize \documentcode \\ \cline{4-5}
+		
+		% Fila 2
+		& & & \scriptsize \textbf{REVISIÓN:} & \scriptsize \documentrevision \\ \cline{3-5}
+		
+		% Fila 3
+		& & \multirow{2}{\linewidth}{\centering \scriptsize \documenttype} & 
+		\scriptsize \textbf{FECHA:} & \scriptsize \documentdate \\ \cline{4-5}
+		
+		% Fila 4
+		& & & \scriptsize \textbf{ELABORÓ:} & \scriptsize \elaboratedby \\ \cline{3-5}
+		
+		% Fila 5
+		\rule{0pt}{3.5mm} & & \multirow{2}{\linewidth}[1mm]{\centering\fontsize{5.5}{6}\selectfont \projecttitle} & 
+		\scriptsize \textbf{REVISÓ:} & \scriptsize \reviewedby \\ \cline{1-2} \cline{4-5}
+		
+		% Fila 6
+		\rule{0pt}{3.5mm}\textbf{\scriptsize PROYECTO:} & \scriptsize \projectcode & & \scriptsize \textbf{APROBÓ:} & \scriptsize \approvedby \\ \hline
+	\end{tabularx}%
+\endgroup%
+}
+
+% ===================== ESTILO CORPORATIVO DEFINITIVO =====================
+\fancypagestyle{corporativo}{%
+	\fancyhf{} % Limpia todo
+	\fancyhead[C]{\empresaheader} % Membrete centrado
+	\fancyfoot[C]{%
+		\fontsize{9}{11}\selectfont\color{gray}%
+		 J.Arboleda \\
+		Servicios profesionales de ingeniería}
+	\fancyfoot[R]{%
+		\fontsize{6}{8}\selectfont%
+		\documentcode\ -- Rev.\ \docRevision \\%
+		Página \thepage\ de \pageref{LastPage}}
+	\renewcommand{\headrulewidth}{0pt} % Sin línea
+	\renewcommand{\footrulewidth}{2pt} % Línea gruesa negra en pie
+}
+
+% Aplicar estilo globalmente
+\pagestyle{corporativo}
+
+% ===================== FORZAR ESTILO EN TODOS LOS CONTEXTOS =====================
+\makeatletter
+% Redefinir todos los estilos de página posibles para usar el nuestro
+\let\ps@plain\ps@corporativo
+\let\ps@empty\ps@corporativo
+\let\ps@headings\ps@corporativo
+\let\ps@myheadings\ps@corporativo
+
+% CRÍTICO: Interceptar y redefinir el estilo del frontmatter de Elsevier
+\let\ps@pprintTitle\ps@corporativo
+\let\ps@pprintFirstpage\ps@corporativo
+\makeatother

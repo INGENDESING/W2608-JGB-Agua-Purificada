@@ -1,0 +1,1029 @@
+/* ==========================================================================
+   W2608 — Portal Técnico de Ingeniería (JGB, Cali)
+   Sistema de Diseño: Inspirado en la estética editorial de Anthropic
+   Paleta cálida (Parchment #FAF9F5, Oat #F0EFEA, Charcoal #141413, Clay #D97757)
+   ========================================================================== */
+
+:root {
+  /* Superficies Anthropic */
+  --bg-parchment: #FAF9F5;
+  --bg-oat: #F0EFEA;
+  --bg-sand: #E8E6DF;
+  --bg-card: #FFFFFF;
+  --bg-charcoal: #141413;
+  --bg-charcoal-soft: #1E1E1C;
+
+  /* Tinta y tipografía */
+  --ink-primary: #141413;
+  --ink-secondary: #3D3D3A;
+  --ink-muted: #6B6A65;
+  --ink-on-dark: #FAF9F5;
+  --ink-muted-on-dark: #A6A49B;
+
+  /* Acentos editoriales Anthropic */
+  --accent-clay: #D97757;
+  --accent-clay-hover: #C05F3F;
+  --accent-clay-soft: rgba(217, 119, 87, 0.12);
+  --accent-sage: #4F6F5B;
+  --accent-sage-soft: rgba(79, 111, 91, 0.12);
+  --accent-ochre: #B88428;
+  --accent-ochre-soft: rgba(184, 132, 40, 0.13);
+  --accent-slate: #435D6B;
+  --accent-slate-soft: rgba(67, 93, 107, 0.12);
+
+  /* Bordes y sombras sutiles */
+  --border-hairline: #E3E1D8;
+  --border-strong: #C9C6BA;
+  --border-dark: #2E2E2B;
+  --shadow-subtle: 0 1px 2px rgba(20, 20, 19, 0.04), 0 6px 20px rgba(20, 20, 19, 0.03);
+  --shadow-hover: 0 4px 12px rgba(20, 20, 19, 0.07), 0 12px 28px rgba(20, 20, 19, 0.05);
+
+  /* Familias tipográficas */
+  --font-serif: 'Newsreader', 'Source Serif 4', Georgia, Cambria, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Layout */
+  --max-width: 1260px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-parchment);
+  color: var(--ink-primary);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-parchment);
+  color: var(--ink-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   Barra superior de navegación (Anthropic Minimal Header)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 249, 245, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.75rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--ink-primary);
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-card);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+}
+
+.brand-logos img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-strong);
+}
+
+.brand-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-code {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-clay);
+  text-transform: uppercase;
+}
+
+.brand-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  letter-spacing: -0.01em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--ink-secondary);
+  font-size: 0.84rem;
+  font-weight: 500;
+  padding: 0.42rem 0.72rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: var(--bg-oat);
+  color: var(--ink-primary);
+}
+
+.header-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-clay-soft);
+  color: var(--accent-clay-hover);
+  border: 1px solid rgba(217, 119, 87, 0.28);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Hero Editorial (Estilo Anthropic Research / Technical Paper)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding: 4.25rem 1.75rem 3.5rem;
+  border-bottom: 1px solid var(--border-hairline);
+  background:
+    radial-gradient(circle at 88% 14%, rgba(217, 119, 87, 0.08), transparent 38%),
+    radial-gradient(circle at 12% 82%, rgba(79, 111, 91, 0.06), transparent 42%),
+    var(--bg-parchment);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  margin-bottom: 1.15rem;
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-clay);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.15rem, 3.6vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink-primary);
+  margin: 0 0 1.4rem;
+}
+
+.hero-lead {
+  font-size: 1.06rem;
+  line-height: 1.72;
+  color: var(--ink-secondary);
+  margin: 0 0 1.25rem;
+  text-align: justify;
+}
+
+.hero-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.meta-item {
+  background: var(--bg-oat);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-hairline);
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.meta-value {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+}
+
+/* Panel interactivo del esquema hidráulico en el Hero */
+.hero-schematic-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.schematic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.schematic-title {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-secondary);
+}
+
+.schematic-caption {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  margin-top: 0.85rem;
+  line-height: 1.5;
+}
+
+.schematic-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.loop-node {
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.loop-node:hover {
+  opacity: 0.9;
+}
+
+.loop-detail-banner {
+  margin-top: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-oat);
+  border-left: 3px solid var(--accent-clay);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--ink-secondary);
+}
+
+/* ==========================================================================
+   Franja de métricas técnicas (KPIs de arquitectura del estudio)
+   ========================================================================== */
+.metrics-band {
+  background: var(--bg-oat);
+  border-bottom: 1px solid var(--border-hairline);
+  padding: 1.75rem 1.75rem;
+}
+
+.metrics-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.metric-card {
+  background: var(--bg-parchment);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.15rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.metric-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--ink-primary);
+  margin-bottom: 0.35rem;
+}
+
+.metric-num span {
+  color: var(--accent-clay);
+  font-size: 1.35rem;
+}
+
+.metric-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.metric-sub {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   Secciones Generales y Encabezados Editoriales
+   ========================================================================== */
+.section-block {
+  padding: 4.25rem 1.75rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.section-block.alt-bg {
+  background-color: var(--bg-oat);
+}
+
+.section-block.dark-bg {
+  background-color: var(--bg-charcoal);
+  color: var(--ink-on-dark);
+  border-bottom-color: var(--border-dark);
+}
+
+.section-header {
+  max-width: 840px;
+  margin-bottom: 2.5rem;
+}
+
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-clay);
+  display: block;
+  margin-bottom: 0.55rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.9rem;
+}
+
+.section-prose {
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: var(--ink-secondary);
+  margin: 0 0 1rem;
+  text-align: justify;
+}
+
+.dark-bg .section-prose {
+  color: var(--ink-muted-on-dark);
+}
+
+/* ==========================================================================
+   Tarjetas de Anillos y Equipo
+   ========================================================================== */
+.loops-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.loop-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.loop-card:hover {
+  border-color: var(--accent-clay);
+  box-shadow: var(--shadow-hover);
+}
+
+.loop-card.tank-card {
+  background: var(--bg-oat);
+  border-color: var(--border-strong);
+}
+
+.loop-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 0.75rem;
+}
+
+.tag-farma { background: var(--accent-clay-soft); color: var(--accent-clay-hover); }
+.tag-cosmeticos { background: var(--accent-sage-soft); color: var(--accent-sage); }
+.tag-suplementos { background: var(--accent-ochre-soft); color: var(--accent-ochre); }
+.tag-pw { background: var(--accent-slate-soft); color: var(--accent-slate); }
+.tag-tanque { background: rgba(20, 20, 19, 0.08); color: var(--ink-primary); }
+
+.loop-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem;
+}
+
+.loop-card p {
+  font-size: 0.87rem;
+  color: var(--ink-secondary);
+  margin: 0 0 1rem;
+  line-height: 1.55;
+}
+
+.loop-foot {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+/* ==========================================================================
+   Tablas Estilo Elsevier (Sin bordes verticales, líneas horizontales limpias)
+   ========================================================================== */
+.table-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  overflow-x: auto;
+}
+
+.table-caption {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink-primary);
+  margin-bottom: 0.9rem;
+}
+
+.table-caption span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-clay);
+  margin-right: 0.4rem;
+}
+
+.elsevier-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid var(--ink-primary);
+  border-bottom: 2px solid var(--ink-primary);
+  font-size: 0.9rem;
+}
+
+.elsevier-table thead th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-primary);
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1.5px solid var(--ink-primary);
+  background: rgba(240, 239, 234, 0.55);
+}
+
+.elsevier-table tbody td {
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid var(--border-hairline);
+  vertical-align: top;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+}
+
+.elsevier-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.elsevier-table tbody tr:hover td {
+  background-color: rgba(240, 239, 234, 0.45);
+}
+
+.code-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--bg-oat);
+  color: var(--ink-primary);
+  border: 1px solid var(--border-strong);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* ==========================================================================
+   Controles de Filtro y Buscador (Estilo Anthropic Console)
+   ========================================================================== */
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg-card);
+  padding: 0.9rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-hairline);
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filter-btn {
+  appearance: none;
+  border: 1px solid var(--border-hairline);
+  background: var(--bg-parchment);
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--ink-primary);
+}
+
+.filter-btn.active {
+  background: var(--ink-primary);
+  color: var(--bg-parchment);
+  border-color: var(--ink-primary);
+}
+
+.search-input {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  padding: 0.48rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-parchment);
+  color: var(--ink-primary);
+  min-width: 260px;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--accent-clay);
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   Matriz Interactiva de 28 Unidades de Análisis
+   ========================================================================== */
+.matrix-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 0.85fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.unit-btn {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  width: 44px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-parchment);
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.unit-btn:hover,
+.unit-btn.selected {
+  background: var(--accent-clay);
+  color: #FFFFFF;
+  border-color: var(--accent-clay);
+  transform: scale(1.06);
+}
+
+.unit-btn.dimmed {
+  opacity: 0.25;
+}
+
+.unit-inspector {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  position: sticky;
+  top: 5.2rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.inspector-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-clay);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.inspector-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.85rem;
+  color: var(--ink-primary);
+}
+
+.inspector-meta-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.inspector-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.inspector-row strong {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Tarjetas de Metodología (7 Etapas) y Bloques Técnicos Oscuros
+   ========================================================================== */
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.stage-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stage-number {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--accent-clay);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.stage-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.stage-card p {
+  font-size: 0.88rem;
+  color: var(--ink-secondary);
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+
+.stage-output {
+  background: var(--bg-oat);
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.81rem;
+  color: var(--ink-primary);
+  border-left: 3px solid var(--accent-sage);
+}
+
+.pillars-dark-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.pillar-dark-card {
+  background: var(--bg-charcoal-soft);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.pillar-dark-card .pillar-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-clay);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-dark-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink-on-dark);
+  margin: 0 0 0.75rem;
+}
+
+.pillar-dark-card p {
+  font-size: 0.88rem;
+  color: var(--ink-muted-on-dark);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Cronograma Visual de 8 Semanas (Gantt Editorial)
+   ========================================================================== */
+.gantt-grid {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.gantt-row {
+  display: grid;
+  grid-template-columns: 290px repeat(8, 1fr) 150px;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg-parchment);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+}
+
+.gantt-row.gantt-head {
+  background: var(--ink-primary);
+  color: var(--bg-parchment);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gantt-cell {
+  height: 24px;
+  border-radius: 4px;
+  background: rgba(20, 20, 19, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.gantt-cell.active-bar {
+  background: var(--accent-slate-soft);
+  border: 1px solid var(--accent-slate);
+  color: var(--accent-slate);
+  font-weight: 600;
+}
+
+.gantt-cell.visit-bar {
+  background: var(--accent-clay);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.gantt-cell.milestone-bar {
+  background: var(--accent-sage);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Numerales de Delimitación Técnica y Referencias
+   ========================================================================== */
+.clauses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.clause-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.2rem 1.35rem;
+}
+
+.clause-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-clay);
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.clause-box p {
+  margin: 0;
+  font-size: 0.89rem;
+  color: var(--ink-secondary);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.refs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.ref-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.95rem 1.15rem;
+  font-size: 0.84rem;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.ref-idx {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--accent-clay);
+  flex-shrink: 0;
+}
+
+.ref-item a {
+  color: var(--ink-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-clay);
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.ref-item a:hover {
+  color: var(--accent-clay);
+}
+
+/* ==========================================================================
+   Pie de página (Anthropic Editorial Footer)
+   ========================================================================== */
+.site-footer {
+  background: var(--bg-charcoal);
+  color: var(--ink-muted-on-dark);
+  padding: 3rem 1.75rem;
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--ink-on-dark);
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   Responsividad
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .hero-grid,
+  .matrix-layout {
+    grid-template-columns: 1fr;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .loops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pillars-dark-grid,
+  .clauses-grid,
+  .refs-grid {
+    grid-template-columns: 1fr;
+  }
+  .gantt-row {
+    grid-template-columns: 180px repeat(8, 1fr);
+  }
+  .gantt-row > div:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .metrics-grid,
+  .loops-grid,
+  .hero-meta-strip {
+    grid-template-columns: 1fr;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

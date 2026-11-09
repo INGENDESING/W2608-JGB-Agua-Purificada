@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>W2608 — Diagnóstico del Sistema de Agua Purificada y Distribución JGB | Portal Técnico</title>
+  <meta name="description" content="Portal técnico del proyecto W2608: Diagnóstico del Sistema de Tratamiento y Distribución de Agua Purificada y Distribución JGB en Cali. Alcance, matriz 4x7, entregables, metodología y marco normativo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ==================== CABECERA EDITORIAL ==================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand-cluster">
+        <div class="brand-logos">
+          <img src="assets/logo_JAGDESING.png" alt="Logo JAGDESING" />
+          <div class="brand-divider"></div>
+          <img src="assets/logo_JGB.png" alt="Logo JGB" />
+        </div>
+        <div class="brand-meta">
+          <span class="brand-code">Proyecto W2608 · Cali, Colombia</span>
+          <span class="brand-title">Diagnóstico Sistema de Agua Purificada JGB</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación técnica">
+        <a href="#alcance">1. Alcance y Equipo</a>
+        <a href="#matriz">2. Matriz 28 Unidades</a>
+        <a href="#componentes">3. Componentes (12)</a>
+        <a href="#entregables">4. Entregables (13)</a>
+        <a href="#metodologia">5. Metodología</a>
+        <a href="#normativa">6. Normativa</a>
+        <a href="#cronograma">7. Cronograma</a>
+        <a href="#referencias">8. Alcance y Referencias</a>
+      </nav>
+
+      <div class="header-badge">W2608 · Rev. 0</div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO TÉCNICO ==================== -->
+  <section id="inicio" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span>INGENIERÍA DE PROCESOS Y SISTEMAS DE AGUA FARMACÉUTICA · CÓDIGO W2608</span>
+          </div>
+
+          <h1 class="hero-title">
+            Diagnóstico del Sistema de Tratamiento y Distribución de Agua Purificada y Distribución JGB
+          </h1>
+
+          <p class="hero-lead">
+            El estudio técnico integra tres disciplinas complementarias sobre el sistema de agua purificada de JGB en Cali: la evaluación sanitaria conforme a la regulación colombiana, andina y las guías internacionales aplicables; la verificación física de las condiciones de instalación mediante inspección en campo e interpretación de ensayos existentes; y el modelado hidráulico estacionario de los cuatro anillos de distribución y sus interfaces con el tanque pulmón común de 3.000 L [1, 3, 5, 7, 21].
+          </p>
+
+          <p class="hero-lead">
+            Cada hallazgo técnico se estructura con trazabilidad directa entre su evidencia documental o de campo, el requisito normativo aplicable, el comportamiento hidrodinámico modelado y la acción de mejora priorizada por criticidad sanitaria y operativa, consolidando trece documentos técnicos bajo control de revisión.
+          </p>
+
+          <div class="hero-meta-strip">
+            <div class="meta-item">
+              <span class="meta-label">Planta objeto de estudio</span>
+              <span class="meta-value">JGB · Cali, Colombia</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Dirección del proyecto</span>
+              <span class="meta-value">Javier Micolta (J.Micolta)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Ingeniería especialista</span>
+              <span class="meta-value">MSc Jonathan Arboleda (J.Arboleda)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Esquema interactivo estilo ilustración técnica editorial Anthropic -->
+        <div class="hero-schematic-card">
+          <div class="schematic-header">
+            <span class="schematic-title">Arquitectura del Sistema · Selección Interactiva</span>
+            <span class="code-pill">FO-AS-150 [21]</span>
+          </div>
+
+          <svg class="schematic-svg" viewBox="0 0 520 350" role="img" aria-label="Esquema de los cuatro anillos de distribución y tanque pulmón de 3.000 L">
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                <path d="M 0 1 L 10 5 L 0 9 z" fill="#6B6A65" />
+              </marker>
+            </defs>
+
+            <!-- Fondo de retícula sutil -->
+            <rect x="8" y="8" width="504" height="334" rx="10" fill="#FAF9F5" stroke="#E3E1D8" />
+
+            <!-- Líneas de conexión desde el tanque común hacia los 4 anillos -->
+            <path d="M 168 175 L 250 65 L 295 65" fill="none" stroke="#D97757" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 168 175 L 250 138 L 295 138" fill="none" stroke="#4F6F5B" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 168 175 L 250 212 L 295 212" fill="none" stroke="#B88428" stroke-width="2" marker-end="url(#arrow)" />
+            <path d="M 168 175 L 250 285 L 295 285" fill="none" stroke="#435D6B" stroke-width="2" marker-end="url(#arrow)" />
+
+            <!-- Retornos punteados de recirculación -->
+            <path d="M 295 82 L 222 82 L 145 140" fill="none" stroke="#C9C6BA" stroke-width="1.3" stroke-dasharray="4 3" />
+            <path d="M 295 298 L 222 298 L 145 212" fill="none" stroke="#C9C6BA" stroke-width="1.3" stroke-dasharray="4 3" />
+
+            <!-- Nodo Tanque Común 3.000 L -->
+            <g class="loop-node" data-loop-key="tanque">
+              <rect x="28" y="108" width="140" height="134" rx="12" fill="#141413" stroke="#D97757" stroke-width="2" />
+              <text x="98" y="140" text-anchor="middle" fill="#D97757" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">SISTEMA COMÚN</text>
+              <text x="98" y="164" text-anchor="middle" fill="#FAF9F5" font-family="Newsreader, Georgia, serif" font-size="15" font-weight="500">Tanque Pulmón</text>
+              <text x="98" y="185" text-anchor="middle" fill="#FAF9F5" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600">3.000 L</text>
+              <text x="98" y="210" text-anchor="middle" fill="#A6A49B" font-family="Plus Jakarta Sans, sans-serif" font-size="10">Unidades 01 · 08 · 15 · 22</text>
+              <text x="98" y="226" text-anchor="middle" fill="#A6A49B" font-family="JetBrains Mono, monospace" font-size="9">W2608PRINF001</text>
+            </g>
+
+            <!-- Nodo Anillo 1: Farma -->
+            <g class="loop-node" data-loop-key="farma">
+              <rect x="300" y="36" width="194" height="54" rx="8" fill="#FFFFFF" stroke="#D97757" stroke-width="1.8" />
+              <text x="314" y="58" fill="#141413" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="500">Anillo Farma</text>
+              <text x="314" y="76" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="10">Unid. 01–07 · W2608PRCAL001</text>
+            </g>
+
+            <!-- Nodo Anillo 2: Cosméticos -->
+            <g class="loop-node" data-loop-key="cosmeticos">
+              <rect x="300" y="109" width="194" height="54" rx="8" fill="#FFFFFF" stroke="#4F6F5B" stroke-width="1.8" />
+              <text x="314" y="131" fill="#141413" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="500">Anillo Cosméticos</text>
+              <text x="314" y="149" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="10">Unid. 08–14 · W2608PRCAL002</text>
+            </g>
+
+            <!-- Nodo Anillo 3: Suplementos -->
+            <g class="loop-node" data-loop-key="suplementos">
+              <rect x="300" y="182" width="194" height="54" rx="8" fill="#FFFFFF" stroke="#B88428" stroke-width="1.8" />
+              <text x="314" y="204" fill="#141413" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="500">Anillo Suplementos</text>
+              <text x="314" y="222" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="10">Unid. 15–21 · W2608PRCAL003</text>
+            </g>
+
+            <!-- Nodo Anillo 4: PW -->
+            <g class="loop-node" data-loop-key="pw">
+              <rect x="300" y="255" width="194" height="54" rx="8" fill="#FFFFFF" stroke="#435D6B" stroke-width="1.8" />
+              <text x="314" y="277" fill="#141413" font-family="Newsreader, Georgia, serif" font-size="14" font-weight="500">Anillo PW</text>
+              <text x="314" y="295" fill="#6B6A65" font-family="JetBrains Mono, monospace" font-size="10">Unid. 22–28 · W2608PRCAL004</text>
+            </g>
+          </svg>
+
+          <div id="schematic-detail-banner" class="loop-detail-banner">
+            <strong>Tanque Pulmón Común de 3.000 L</strong> · <span style="font-family: var(--font-mono); font-size: 0.78rem;">Incidencia transversal en unidades 01, 08, 15 y 22</span><br />
+            <span>Haz clic sobre el tanque o cualquiera de los cuatro anillos en el esquema para inspeccionar su alcance técnico y su memoria de cálculo asociada.</span>
+          </div>
+
+          <div class="schematic-caption">
+            Figura 1. Topología funcional de evaluación del sistema de almacenamiento común (3.000 L) y los cuatro anillos de distribución de agua purificada en JGB, Cali [21].
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FRANJA DE MÉTRICAS TÉCNICAS ==================== -->
+  <section class="metrics-band" aria-label="Indicadores de arquitectura técnica">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-num">4 <span>anillos</span></div>
+        <div class="metric-title">Sistemas Evaluados</div>
+        <div class="metric-sub">Farma, Cosméticos, Suplementos y PW + Tanque 3.000 L</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">28 <span>unid.</span></div>
+        <div class="metric-title">Matriz 4 × 7</div>
+        <div class="metric-sub">7 tipos de evaluación aplicados a cada uno de los 4 anillos</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">13 <span>docs</span></div>
+        <div class="metric-title">Entregables Técnicos</div>
+        <div class="metric-sub">7 informes INF, 4 memorias CAL, 1 ejecutivo y 1 listado LIS</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">12 <span>fam.</span></div>
+        <div class="metric-title">Familias de Equipos</div>
+        <div class="metric-sub">Tubería inoxidable, válvulas, sellos, soldaduras e instrumentación</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">7 <span>etapas</span></div>
+        <div class="metric-title">Secuencia Metodológica</div>
+        <div class="metric-sub">Desde definición de bases hasta alternativas de rediseño</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-num">8 <span>sem.</span></div>
+        <div class="metric-title">Horizonte y Campo</div>
+        <div class="metric-sub">Ejecución técnica con 3 visitas en semanas 1, 2 y 6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 1. ALCANCE TÉCNICO Y EQUIPO ==================== -->
+  <section id="alcance" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 01 · Objeto, Sistemas y Organización</span>
+        <h2 class="section-title">Alcance técnico por anillo y estructura de ingeniería</h2>
+        <p class="section-prose">
+          El diagnóstico comprende el sistema de tratamiento y distribución de agua purificada de JGB en Cali, abarcando los anillos Farma, Cosméticos, Suplementos y PW junto con el tanque pulmón común de 3.000 L [21]. El tanque común se evalúa como unidad de almacenamiento e interfaz compartida: la interpretación de sus reportes de videoscopia y líquidos penetrantes se realiza de manera integral y sus implicaciones sanitarias e hidráulicas se particularizan para cada anillo en las unidades 01, 08, 15 y 22.
+        </p>
+        <p class="section-prose">
+          El desarrollo técnico se ejecuta mediante el trabajo conjunto de Javier Micolta y MSc Jonathan Arboleda, conforme a la distribución de responsabilidades definida en la Tabla 1.
+        </p>
+      </div>
+
+      <div class="loops-grid">
+        <article class="loop-card">
+          <div>
+            <span class="loop-tag tag-farma">ANILLO 01 · FARMA</span>
+            <h3>Distribución Farma</h3>
+            <p>Evaluación sanitaria bajo Resolución 1160/2016 y 2190/2020, OMS TRS 1033 Anexo 3, USP-NF y criterios ASME BPE-2026. Modelado de caudales, presiones, velocidades y puntos muertos.</p>
+          </div>
+          <div class="loop-foot">Unidades 01–07 · Memoria W2608PRCAL001</div>
+        </article>
+
+        <article class="loop-card">
+          <div>
+            <span class="loop-tag tag-cosmeticos">ANILLO 02 · COSMÉTICOS</span>
+            <h3>Distribución Cosméticos</h3>
+            <p>Contraste normativo con Resolución Andina 2206 de 2021 (numerales 12.8.1–12.8.4), lista armonizada 2214 de 2021 (ítems 77–80) e ISO 22716:2007, integrado al modelo hidráulico del anillo.</p>
+          </div>
+          <div class="loop-foot">Unidades 08–14 · Memoria W2608PRCAL002</div>
+        </article>
+
+        <article class="loop-card">
+          <div>
+            <span class="loop-tag tag-suplementos">ANILLO 03 · SUPLEMENTOS</span>
+            <h3>Distribución Suplementos</h3>
+            <p>Verificación conforme al Decreto 3249 de 2006 (anexo 1, numeral 5.1, según categoría aplicable), drenabilidad, compatibilidad de materiales, puntos de muestreo y pérdidas de carga.</p>
+          </div>
+          <div class="loop-foot">Unidades 15–21 · Memoria W2608PRCAL003</div>
+        </article>
+
+        <article class="loop-card">
+          <div>
+            <span class="loop-tag tag-pw">ANILLO 04 · PW</span>
+            <h3>Distribución PW</h3>
+            <p>Evaluación integral del anillo de agua purificada, condiciones de recirculación, velocidad de retorno, caídas de presión por tramo, instrumentación en línea y control microbiológico/TOC.</p>
+          </div>
+          <div class="loop-foot">Unidades 22–28 · Memoria W2608PRCAL004</div>
+        </article>
+
+        <article class="loop-card tank-card">
+          <div>
+            <span class="loop-tag tag-tanque">INTERFAZ COMÚN</span>
+            <h3>Tanque Pulmón 3.000 L</h3>
+            <p>Revisión única de reportes de videoscopia y líquidos penetrantes, conexiones de alimentación/retorno, venteo, drenaje y dispositivos de limpieza, vinculada a los cuatro anillos.</p>
+          </div>
+          <div class="loop-foot">Incidencia en Unidades 01, 08, 15 y 22</div>
+        </article>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-caption">
+          <span>Tabla 1.</span> Distribución de funciones técnicas del equipo del proyecto W2608.
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 62%;">Función dentro del diagnóstico técnico</th>
+              <th style="width: 24%;">Responsable</th>
+              <th style="width: 14%;">Firma documental</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dirección, gestión y administración general del proyecto</td>
+              <td>Javier Micolta</td>
+              <td><span class="code-pill">J.Micolta</span></td>
+            </tr>
+            <tr>
+              <td>Coordinación y encargo de las visitas técnicas de campo y liderazgo de reuniones con planta</td>
+              <td>Javier Micolta</td>
+              <td><span class="code-pill">J.Micolta</span></td>
+            </tr>
+            <tr>
+              <td>Revisión técnica de los informes, control de calidad documental, comunicaciones y remisión de entregables a JGB</td>
+              <td>Javier Micolta</td>
+              <td><span class="code-pill">J.Micolta</span></td>
+            </tr>
+            <tr>
+              <td>Ingeniería especialista: elaboración de las cuatro memorias de cálculo hidráulico (W2608PRCAL001 a W2608PRCAL004), los siete informes de evaluación (W2608PRINF001 a W2608PRINF007) y el informe general ejecutivo (W2608PRINF008)</td>
+              <td>MSc Jonathan Arboleda</td>
+              <td><span class="code-pill">J.Arboleda</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2. MATRIZ DE 28 UNIDADES DE ANÁLISIS ==================== -->
+  <section id="matriz" class="section-block alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 02 · Arquitectura de Trazabilidad (4 × 7 = 28)</span>
+        <h2 class="section-title">Matriz interactiva de las 28 unidades de análisis</h2>
+        <p class="section-prose">
+          El alcance técnico se estructura en siete evaluaciones transversales aplicadas sobre los cuatro anillos de distribución. Cada intersección entre una evaluación y un anillo conforma una unidad de análisis numerada del 01 al 28 (Tabla 2): Farma agrupa las unidades 01–07; Cosméticos, 08–14; Suplementos, 15–21; y PW, 22–28. Las 28 unidades se consolidan en siete informes de evaluación (W2608PRINF001 a W2608PRINF007), cada uno sustentado en las cuatro memorias de cálculo hidráulico [21].
+        </p>
+      </div>
+
+      <div class="controls-bar">
+        <div class="filter-pills" role="group" aria-label="Filtrar matriz por anillo">
+          <button type="button" class="filter-btn active" data-matrix-filter="all">Todos los anillos (28 unidades)</button>
+          <button type="button" class="filter-btn" data-matrix-filter="farma">Farma (01–07)</button>
+          <button type="button" class="filter-btn" data-matrix-filter="cosmeticos">Cosméticos (08–14)</button>
+          <button type="button" class="filter-btn" data-matrix-filter="suplementos">Suplementos (15–21)</button>
+          <button type="button" class="filter-btn" data-matrix-filter="pw">PW (22–28)</button>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted);">
+          Selecciona cualquier código 01–28 para inspeccionar su trazabilidad
+        </div>
+      </div>
+
+      <div class="matrix-layout">
+        <div class="table-wrapper">
+          <div class="table-caption">
+            <span>Tabla 2.</span> Matriz de las 28 unidades de análisis del diagnóstico técnico (4 anillos × 7 evaluaciones).
+          </div>
+          <table class="elsevier-table">
+            <thead>
+              <tr>
+                <th style="width: 16%;">Informe</th>
+                <th style="width: 44%;">Evaluación técnica y resultado esperado</th>
+                <th style="width: 10%; text-align: center;">Farma</th>
+                <th style="width: 10%; text-align: center;">Cosm.</th>
+                <th style="width: 10%; text-align: center;">Supl.</th>
+                <th style="width: 10%; text-align: center;">PW</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-tbody"></tbody>
+          </table>
+        </div>
+
+        <aside class="unit-inspector" aria-live="polite">
+          <div id="unit-inspector-content"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. FAMILIAS DE COMPONENTES ==================== -->
+  <section id="componentes" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 03 · Inspección Física, Materiales y Diseño Higiénico</span>
+        <h2 class="section-title">Doce familias de componentes y criterios técnicos de evaluación</h2>
+        <p class="section-prose">
+          La evaluación cubre los elementos instalados en los cuatro anillos y en sus interfaces comunes con el tanque pulmón de 3.000 L, conforme a las doce familias de la Tabla 3. Las familias y materiales enunciados constituyen categorías técnicas por identificar y contrastar en planta frente a la evidencia documental y de campo, considerando el agua de proceso, los agentes de limpieza y sanitización, la temperatura, la presión y los ciclos operativos [3, 5, 7, 20].
+        </p>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-caption">
+          <span>Tabla 3.</span> Familias de componentes incluidos en el diagnóstico y criterios técnicos de verificación.
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 24%;">Familia de componentes</th>
+              <th style="width: 30%;">Elementos por identificar y levantar</th>
+              <th style="width: 46%;">Criterio de evaluación y evidencia requerida</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Materiales metálicos en contacto con el agua</strong></td>
+              <td>Aceros inoxidables austeníticos, incluidos 316L o 304/304L cuando estén documentados</td>
+              <td>Grado real instalado, certificados de colada y trazabilidad; corrosión, alteraciones superficiales y compatibilidad con el servicio y la sanitización [5, 7, 10].</td>
+            </tr>
+            <tr>
+              <td><strong>2. Superficies internas y pasivación</strong></td>
+              <td>Tubería sanitaria, tanque de 3.000 L, cuerpos de válvula y accesorios</td>
+              <td>Acabado superficial declarado, registros o mediciones disponibles, picaduras, depósitos, coloración de óxido/tinte térmico y registros de limpieza, decapado y pasivación [5, 7, 11, 12].</td>
+            </tr>
+            <tr>
+              <td><strong>3. Polímeros, mangueras y no metálicos</strong></td>
+              <td>Materiales poliméricos instalados y grado de formulación sanitaria</td>
+              <td>Compatibilidad química y térmica, envejecimiento, absorción, deformación y posible cesión de sustancias; documentación del compuesto y de su aplicación [5, 7, 20].</td>
+            </tr>
+            <tr>
+              <td><strong>4. Juntas, diafragmas y sellos</strong></td>
+              <td>EPDM, PTFE, silicona u otros elastómeros/fluoropolímeros identificados</td>
+              <td>Estado físico, compresión y montaje, intrusión en la vena fluida o retracción, compatibilidad con ciclos de sanitización y trazabilidad del compuesto [5, 7, 8, 20].</td>
+            </tr>
+            <tr>
+              <td><strong>5. Válvulas de diafragma y puntos de uso</strong></td>
+              <td>Configuración, orientación de montaje, derivaciones, actuador y membrana</td>
+              <td>Ángulo de autovaciado, accesibilidad, zonas retenidas, estanqueidad, limpieza y funcionamiento; geometría real y capacidad hidráulica; referencia 3-A 54-02 cuando sea pertinente [5, 7, 8].</td>
+            </tr>
+            <tr>
+              <td><strong>6. Válvulas de mariposa, bola y otros cierres</strong></td>
+              <td>Tipología y construcción efectivamente instalada en líneas de proceso o distribución</td>
+              <td>Evaluación de cavidades muertas tras asientos, limpiabilidad en sitio, drenabilidad y riesgo de retención microbiológica; contraste entre diseño, evidencia y servicio [7, 8].</td>
+            </tr>
+            <tr>
+              <td><strong>7. Retención, regulación y protección</strong></td>
+              <td>Válvulas antirretorno, reductoras, de contrapresión, de alivio y rompedoras de vacío</td>
+              <td>Orientación, presión de apertura, drenabilidad, prevención de reflujo, capacidad de caudal y estabilidad operativa; referencias 3-A 58-02 y 64-00 cuando correspondan [5, 7, 8].</td>
+            </tr>
+            <tr>
+              <td><strong>8. Accesorios y conexiones sanitarias</strong></td>
+              <td>Codos, tees, reducciones concéntricas/excéntricas, férulas Tri-Clamp y uniones desmontables</td>
+              <td>Compatibilidad dimensional (serie de tubo), alineación axial, ausencia de escalones y hendiduras, correcto asiento de juntas y zonas de retención; referencias ASME BPE y 3-A 63-04 [7, 19].</td>
+            </tr>
+            <tr>
+              <td><strong>9. Uniones soldadas</strong></td>
+              <td>Soldaduras orbitales o manuales en tubería, accesorios y tanque según documentación y acceso</td>
+              <td>Mapa isométrico y trazabilidad, procedimientos de soldadura y registros disponibles, geometría interna de penetración y reportes de videoscopia y líquidos penetrantes [5, 7].</td>
+            </tr>
+            <tr>
+              <td><strong>10. Tanque común y equipos asociados</strong></td>
+              <td>Venteo con filtro hidrofóbico, drenaje de fondo, boquillas, dispositivos de limpieza (spray ball) y recirculación</td>
+              <td>Ausencia de retención de líquido en fondo y boquillas, cobertura de limpieza, acceso higiénico, integridad de interfaces y coherencia con el régimen de retorno [5, 7, 8].</td>
+            </tr>
+            <tr>
+              <td><strong>11. Muestreo e instrumentación en línea</strong></td>
+              <td>Tomas de muestra sanitarias y sensores de caudal, presión, temperatura, conductividad y TOC</td>
+              <td>Ubicación representativa (suministro/retorno), longitud de racores de inserción, calibración vigente, limpiabilidad y correspondencia con las variables del modelo hidráulico [3–7].</td>
+            </tr>
+            <tr>
+              <td><strong>12. Instalación, pendientes y soportación</strong></td>
+              <td>Pendientes hacia puntos bajos, soportes, holguras térmicas, cruces e identificación de tuberías</td>
+              <td>Drenabilidad gravitacional real, accesos seguros de mantenimiento, estabilidad mecánica, ausencia de flechas con acumulación de agua y rotulación de sentido de flujo [3, 5, 7].</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. LISTADO MAESTRO DE 13 ENTREGABLES ==================== -->
+  <section id="entregables" class="section-block alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 04 · Control Documental (W2608PRLIS001)</span>
+        <h2 class="section-title">Listado maestro de los 13 documentos entregables del estudio</h2>
+        <p class="section-prose">
+          El alcance documental del diagnóstico comprende trece entregables técnicos codificados bajo la convención compacta del proyecto (`W2608` + especialidad `PR` + tipo `INF`, `CAL` o `LIS` + consecutivo de tres dígitos): siete informes de evaluación transversal, un informe general ejecutivo, cuatro memorias de cálculo hidráulico por anillo y el listado maestro de documentos (Tabla 4). Cada informe de evaluación incorpora el sustento hidráulico de los cuatro anillos referenciando el escenario y la revisión correspondiente de las memorias `W2608PRCAL001` a `W2608PRCAL004`.
+        </p>
+      </div>
+
+      <div class="controls-bar">
+        <div class="filter-pills" role="group" aria-label="Filtrar entregables por tipo">
+          <button type="button" class="filter-btn active" data-deliv-filter="ALL">Todos (13)</button>
+          <button type="button" class="filter-btn" data-deliv-filter="INF">Informes de Evaluación INF (7)</button>
+          <button type="button" class="filter-btn" data-deliv-filter="CAL">Memorias Hidráulicas CAL (4)</button>
+          <button type="button" class="filter-btn" data-deliv-filter="EJEC">Informe Ejecutivo INF008 (1)</button>
+          <button type="button" class="filter-btn" data-deliv-filter="LIS">Listado Maestro LIS (1)</button>
+        </div>
+
+        <input
+          type="search"
+          id="deliverables-search"
+          class="search-input"
+          placeholder="Buscar por código (ej. CAL001), anillo o semana..."
+          aria-label="Buscar en los 13 entregables"
+        />
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-caption" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div><span>Tabla 4.</span> Listado maestro de los trece documentos técnicos del estudio (W2608PRLIS001).</div>
+          <div id="deliverables-count" style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted);">Mostrando 13 de 13 documentos técnicos planificados</div>
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 5%;">N.º</th>
+              <th style="width: 15%;">Código</th>
+              <th style="width: 40%;">Entregable y alcance técnico previsto</th>
+              <th style="width: 18%;">Cobertura</th>
+              <th style="width: 10%;">1.ª Entrega</th>
+              <th style="width: 12%;">Responsables</th>
+            </tr>
+          </thead>
+          <tbody id="deliverables-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. METODOLOGÍA DE INGENIERÍA ==================== -->
+  <section id="metodologia" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 05 · Rigor Técnico y Modelado Fisicoquímico</span>
+        <h2 class="section-title">Secuencia metodológica en siete etapas y bases del modelo</h2>
+        <p class="section-prose">
+          La metodología articula la revisión crítica de planos y reportes, el levantamiento coordinado en planta, el modelado hidráulico estacionario y la evaluación sanitaria y de seguridad de procesos en siete etapas consecutivas (Tabla 5). Cada etapa genera un producto verificable que sirve de entrada trazable a la etapa siguiente.
+        </p>
+      </div>
+
+      <div class="stages-grid">
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 01 · Bases y Aplicabilidad</div>
+            <h3>Definición de bases por anillo</h3>
+            <p>Revisión del RUS FO-AS-150, usos de agua, especificaciones, planos 17-PT-A-G-0017 y 18-PT-A-G-0018, reportes de ensayos y procedimientos operativos [1–6, 14, 21].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Matriz requisito–criterio–dato–fuente, correspondencia de los 4 anillos y listado de información por levantar.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 02 · Inspección Física</div>
+            <h3>Levantamiento y contraste en campo</h3>
+            <p>Identificación en planta de líneas, tanque de 3.000 L, válvulas, accesorios, materiales, puntos de uso, muestreo y soportación, contrastando isometría real contra planos [3, 5, 7, 8].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Registro técnico por componente y anillo, discrepancias plano vs. planta y dimensiones verificadas.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 03 · Ingeniería Higiénica</div>
+            <h3>Evaluación sanitaria y de materiales</h3>
+            <p>Contraste de drenabilidad, tramos con retención, acabado superficial, pasivación, elastómeros, uniones soldadas/feruladas y certificados frente a ASME BPE y normas 3-A [5, 7–12, 18–20].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Inventario geométrico de puntos muertos (L/D), fichas de evidencia de componentes y condición documental.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 04 · Simulación Hidráulica</div>
+            <h3>Modelado y cálculo hidráulico</h3>
+            <p>Construcción de modelos estacionarios de los cuatro anillos con propiedades termofísicas consistentes; evaluación de escenarios de demanda simultánea, retorno y sanitización.</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Memorias W2608PRCAL001 a W2608PRCAL004 con caudales, presiones, velocidades, número de Reynolds y pérdidas de carga.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 05 · Calidad del Agua</div>
+            <h3>Evaluación fisicoquímica y microbiológica</h3>
+            <p>Análisis de registros históricos y tendencias de conductividad, carbono orgánico total (TOC), recuentos microbiológicos, representatividad de tomas de muestra y ciclos de sanitización [1, 3–6, 14].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Correlación entre el comportamiento hidráulico/sanitario de los anillos y la estabilidad de calidad del agua.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 06 · Matriz de Riesgo</div>
+            <h3>No conformidades y clasificación de criticidad</h3>
+            <p>Vinculación de cada desviación con su requisito normativo, ubicación y evidencia; clasificación de criticidad sanitaria y operativa diferenciada de la prioridad de intervención [1, 3, 4].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Informes W2608PRINF005 (no conformidades) y W2608PRINF006 (criticidad) sustentados por anillo.
+          </div>
+        </article>
+
+        <article class="stage-card">
+          <div>
+            <div class="stage-number">Etapa 07 · Ingeniería de Mejoras</div>
+            <h3>Propuestas de rediseño y síntesis ejecutiva</h3>
+            <p>Formulación de modificaciones verificadas en el modelo hidráulico, aplicación de la jerarquía de controles SST (ISO 45001) e integración de la hoja de ruta para la dirección [5, 7, 15–17].</p>
+          </div>
+          <div class="stage-output">
+            <strong>Resultado:</strong> Informe de rediseño (W2608PRINF007), informe ejecutivo (W2608PRINF008) y cierre de W2608PRLIS001.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BLOQUE OSCURO ANTHROPIC: FUNDAMENTOS FÍSICOS Y SST ==================== -->
+  <section class="section-block dark-bg" aria-label="Fundamentos de modelado hidráulico y seguridad en el diseño">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Criterios de Rigor Ingenieril · Física de Fluidos y Seguridad de Procesos</span>
+        <h2 class="section-title">Fundamentos del modelado hidráulico y jerarquía de controles SST</h2>
+        <p class="section-prose">
+          Para garantizar resultados reproducibles y evitar correlaciones mal aplicadas, el diagnóstico separa estrictamente los parámetros topográficos de diseño higiénico de los parámetros hidrodinámicos de pérdida de carga, y aplica la filosofía de seguridad desde el diseño en todas las recomendaciones técnicas.
+        </p>
+      </div>
+
+      <div class="pillars-dark-grid">
+        <div class="pillar-dark-card">
+          <span class="pillar-kicker">01 · Régimen y Balances</span>
+          <h3>Flujo monofásico estacionario y verificación cruzada</h3>
+          <p>
+            El modelo base representa agua líquida monofásica en régimen estacionario con propiedades termofísicas evaluadas a la temperatura operativa documentada. En cada memoria (`W2608PRCAL001`–`004`) se verifican el cierre de balances de masa y energía (error &lt; 0,1 %), el régimen de flujo (Reynolds), las condiciones de frontera en bomba/tanque de 3.000 L y la sensibilidad ante incertidumbre en curvas o demandas.
+          </p>
+        </div>
+
+        <div class="pillar-dark-card">
+          <span class="pillar-kicker">02 · Topografía vs. Hidráulica</span>
+          <h3>Distinción entre rugosidad $R_a$ y rugosidad $\varepsilon$</h3>
+          <p>
+            La evaluación distingue rigurosamente la rugosidad aritmética media superficial sanitaria ($R_a$, en $\mu\text{m}$, empleada en ASME BPE y 3-A para evaluar limpiabilidad y adhesión de biopelícula) de la rugosidad absoluta hidráulica equivalente ($\varepsilon$, empleada en la correlación de Colebrook-White / Darcy-Weisbach). Las pérdidas localizadas en válvulas de diafragma y accesorios se determinan según la geometría real instalada.
+          </p>
+        </div>
+
+        <div class="pillar-dark-card">
+          <span class="pillar-kicker">03 · Seguridad en el Diseño</span>
+          <h3>ISO 45001:2018 y normativa colombiana de SST</h3>
+          <p>
+            En todas las actividades de inspección y propuestas de mejora con peligros identificados (aislamiento de energía y presión MDP/MDT, superficies calientes en sanitización térmica, agentes químicos de limpieza/pasivación y trabajo en alturas/accesos) se documenta la jerarquía de controles de la cláusula 8.1.2 (eliminación, sustitución, controles de ingeniería, administrativos y EPP) bajo ISO 45001:2018, Decreto 1072 de 2015 y Resolución 0312 de 2019 [15–17].
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. MARCO NORMATIVO Y FUNDAMENTO SANITARIO ==================== -->
+  <section id="normativa" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 06 · Regulación Sectorial y Estándares de Ingeniería</span>
+        <h2 class="section-title">Marco normativo y fundamento sanitario por uso y anillo</h2>
+        <p class="section-prose">
+          El agua purificada constituye una materia prima y un servicio crítico cuya calidad fisicoquímica y microbiológica debe preservarse desde la generación y el almacenamiento en el tanque de 3.000 L hasta cada punto de uso. La aplicabilidad normativa se determina por el producto, proceso y uso de cada anillo, articulando la regulación obligatoria (MSPS y Comunidad Andina) con las farmacopeas y los estándares internacionales de ingeniería higiénica (Tabla 6) [1–17].
+        </p>
+      </div>
+
+      <div class="controls-bar">
+        <div class="filter-pills" role="group" aria-label="Filtrar normativa por ámbito">
+          <button type="button" class="filter-btn active" data-norm-filter="all">Todo el marco normativo (11 bloques)</button>
+          <button type="button" class="filter-btn" data-norm-filter="colombia">Regulación Colombiana (MSPS)</button>
+          <button type="button" class="filter-btn" data-norm-filter="andina">Comunidad Andina (CAN Cosméticos)</button>
+          <button type="button" class="filter-btn" data-norm-filter="internacional">Guías OMS y Farmacopea USP</button>
+          <button type="button" class="filter-btn" data-norm-filter="ingenieria">Ingeniería Higiénica (ASME BPE / 3-A / ASTM)</button>
+          <button type="button" class="filter-btn" data-norm-filter="sst">Calidad Cosmética e ISO 45001 (SST)</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-caption">
+          <span>Tabla 6.</span> Referencias normativas, farmacopeicas y de ingeniería higiénica y su aplicación al diagnóstico W2608.
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">Norma, reglamento o estándar</th>
+              <th style="width: 28%;">Naturaleza y ámbito de aplicación</th>
+              <th style="width: 46%;">Aplicación técnica dentro del diagnóstico JGB</th>
+            </tr>
+          </thead>
+          <tbody id="normativa-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. CRONOGRAMA TÉCNICO Y RECURSOS ==================== -->
+  <section id="cronograma" class="section-block alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 07 · Planificación Temporal e Infraestructura de Simulación</span>
+        <h2 class="section-title">Cronograma técnico de ocho semanas, visitas de campo y herramientas</h2>
+        <p class="section-prose">
+          El horizonte de ejecución técnica comprende ocho semanas a partir del inicio acordado con disponibilidad de planos, datos básicos de operación y acceso autorizado a planta. Se contemplan tres visitas técnicas de campo en las semanas 1, 2 y 6, coordinadas por Javier Micolta. El modelado de los cuatro anillos se desarrolla en paralelo durante las semanas 2 a 4, y las verificaciones de la tercera visita se integran en la edición de cierre en la semana 8 (Tabla 7).
+        </p>
+      </div>
+
+      <div class="table-wrapper" style="margin-bottom: 2rem;">
+        <div class="table-caption">
+          <span>Tabla 7.</span> Cronograma técnico por entregables e hitos de campo (Semanas S1 a S8).
+        </div>
+
+        <div class="gantt-grid" role="table" aria-label="Cronograma de 8 semanas">
+          <div class="gantt-row gantt-head">
+            <div>Actividad / Documento</div>
+            <div style="text-align:center;">S1</div>
+            <div style="text-align:center;">S2</div>
+            <div style="text-align:center;">S3</div>
+            <div style="text-align:center;">S4</div>
+            <div style="text-align:center;">S5</div>
+            <div style="text-align:center;">S6</div>
+            <div style="text-align:center;">S7</div>
+            <div style="text-align:center;">S8</div>
+            <div>Hito técnico</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRLIS001</span> Listado maestro</div>
+            <div class="gantt-cell milestone-bar">E1</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell active-bar">···</div>
+            <div class="gantt-cell milestone-bar">Cierre</div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Apertura S1 / Cierre S8</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><strong>Visita Técnica 1</strong> · Levantamiento 4 anillos</div>
+            <div class="gantt-cell visit-bar">V1</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Registro de campo</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><strong>Visita Técnica 2</strong> · Geometría y operación</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell visit-bar">V2</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Datos para modelos</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRCAL001–004</span> 4 Memorias</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Mod</div>
+            <div class="gantt-cell active-bar">Sim</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 4</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF001</span> Videoscopia y tintas</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Rev</div>
+            <div class="gantt-cell active-bar">Anál</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 4</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF002</span> Inspección en campo</div>
+            <div class="gantt-cell active-bar">Lev</div>
+            <div class="gantt-cell active-bar">Lev</div>
+            <div class="gantt-cell active-bar">Contr</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 4</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF003</span> Puntos muertos</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Inv</div>
+            <div class="gantt-cell active-bar">Hidr</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 5</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF004</span> Diagnóstico general</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Int</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 5</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF005–006</span> No conf. y criticidad</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Matr</div>
+            <div class="gantt-cell active-bar">Riesg</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 6</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><strong>Visita Técnica 3</strong> · Contraste y mejoras</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell visit-bar">V3</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Validación en planta</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF007</span> Rediseño y mejoras</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Prop</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div class="gantt-cell"></div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 7</div>
+          </div>
+
+          <div class="gantt-row">
+            <div><span class="code-pill">W2608PRINF008</span> Informe ejecutivo</div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell"></div>
+            <div class="gantt-cell active-bar">Sínt</div>
+            <div class="gantt-cell milestone-bar">Entrega</div>
+            <div style="font-size: 0.78rem; color: var(--ink-muted);">Semana 8</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-caption">
+          <span>Tabla 8.</span> Recursos tecnológicos de ingeniería previstos para la ejecución del estudio, descritos por función técnica.
+        </div>
+        <table class="elsevier-table">
+          <thead>
+            <tr>
+              <th style="width: 34%;">Recurso tecnológico</th>
+              <th style="width: 66%;">Función técnica y aplicación en el diagnóstico W2608</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Herramienta especializada de simulación de redes hidráulicas</strong></td>
+              <td>Construcción del modelo estacionario de los cuatro anillos de distribución y el tanque de 3.000 L, balance de caudales, presiones, velocidades y evaluación de escenarios de demanda y rediseño.</td>
+            </tr>
+            <tr>
+              <td><strong>Segunda herramienta especializada de análisis hidráulico</strong></td>
+              <td>Contraste cruzado independiente de escenarios con entradas equivalentes y verificación de consistencia de pérdidas de carga y puntos de operación.</td>
+            </tr>
+            <tr>
+              <td><strong>Entorno de edición técnica y control documental</strong></td>
+              <td>Preparación estructurada de informes técnicos, tablas normativas, trazabilidad de hallazgos y compilación reproducible de los trece entregables.</td>
+            </tr>
+            <tr>
+              <td><strong>Repositorio colaborativo en la nube y portal técnico</strong></td>
+              <td>Gestión controlada de planos, reportes de campo, seguimiento de avance documental y consulta técnica de los entregables del proyecto.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. DELIMITACIONES TÉCNICAS Y REFERENCIAS ==================== -->
+  <section id="referencias" class="section-block">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-index">Sección 08 · Rigor de Evidencia y Fuentes Primarias</span>
+        <h2 class="section-title">Criterios de delimitación técnica y 22 referencias verificadas</h2>
+        <p class="section-prose">
+          El desarrollo del diagnóstico se rige por los numerales de delimitación técnica 8.1 a 8.7 y se sustenta en las veintidós fuentes regulatorias y normativas listadas a continuación, verificadas con enlace directo y fecha de consulta.
+        </p>
+      </div>
+
+      <div class="clauses-grid" style="margin-bottom: 3rem;">
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.1 · Alcance sobre ensayos no destructivos</span>
+          <p>La evaluación de videoscopia y tintas penetrantes comprende la interpretación técnica de los informes de ensayo suministrados sobre el tanque pulmón de 3.000 L y zonas inspeccionadas, vinculando las indicaciones reportadas con su incidencia sanitaria e hidráulica en cada anillo.</p>
+        </div>
+
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.2 · Carácter no interventivo en planta</span>
+          <p>El diagnóstico es un estudio de ingeniería de evaluación y diseño conceptual/básico de mejoras; no comprende intervención física de la instalación, corte o soldadura, desmontaje de líneas, limpieza química ni suministro de repuestos.</p>
+        </div>
+
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.3 · Alcance frente a certificación regulatoria</span>
+          <p>El estudio entrega soporte técnico trazable para la toma de decisiones de ingeniería y calidad de JGB; no sustituye actos administrativos de certificación BPM, autorizaciones de uso del símbolo 3-A ni protocolos de calificación de instalación/operación/desempeño (IQ/OQ/PQ) [22].</p>
+        </div>
+
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.4 · Independencia de evidencias</span>
+          <p>La calidad fisicoquímica y microbiológica del agua y la sanidad interna de las soldaduras se sustentan en sus propios ensayos y monitoreos analíticos; las memorias hidráulicas (`W2608PRCAL001`–`004`) evalúan el comportamiento fluido-dinámico y no reemplazan los ensayos metalúrgicos o microbiológicos.</p>
+        </div>
+
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.5 · Criterios cuantitativos por norma aplicable</span>
+          <p>Los criterios de rugosidad superficial, relación geométrica de puntos muertos, pendientes de drenaje y velocidades de retorno se establecen según el texto autorizado de la norma aplicable al uso de cada anillo, sin extrapolar exigencias de agua para inyección (WFI) a sistemas de agua purificada (PW) [5–9].</p>
+        </div>
+
+        <div class="clause-box">
+          <span class="clause-num">Numeral 8.6 · Trazabilidad de datos y zonas no accesibles</span>
+          <p>Los materiales, válvulas y accesorios de la Tabla 3 se verifican contra certificados, planos e inspección visual autorizada. Todo tramo oculto o componente sin soporte documental queda registrado explícitamente como pendiente de verificación con evaluación de su riesgo asociado.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-serif); font-size: 1.5rem; font-weight: 400; margin: 0 0 1.25rem;">
+        Referencias normativas, regulatorias y técnicas [1–22]
+      </h3>
+
+      <div class="refs-grid">
+        <div class="ref-item"><span class="ref-idx">[1]</span><div>Ministerio de Salud y Protección Social. <a href="https://normograma.invima.gov.co/compilacion/docs/resolucion_minsaludps_1160_2016.htm" target="_blank" rel="noopener">Resolución 1160 de 2016: manuales de BPM y guías de inspección de establecimientos de producción de medicamentos</a>. Texto compilado por INVIMA; anexo 1, numerales 13.9, 13.13 y 15.14–15.17. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[2]</span><div>Ministerio de Salud y Protección Social. <a href="https://normograma.invima.gov.co/compilacion/docs/resolucion_minsaludps_2190_2020.htm" target="_blank" rel="noopener">Resolución 2190 de 2020: modificación de los artículos 5, 6 y 10 de la Resolución 1160 de 2016</a>. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[3]</span><div>Secretaría General de la Comunidad Andina. <a href="https://normograma.invima.gov.co/compilacion/docs/resolucion_sgcandina_rsg2206.htm" target="_blank" rel="noopener">Resolución 2206 de 2021: Reglamento Técnico Andino de BPM en productos cosméticos</a>, numerales 12.8.1–12.8.4. Texto compilado por INVIMA. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[4]</span><div>Secretaría General de la Comunidad Andina. <a href="https://normograma.invima.gov.co/compilacion/docs/resolucion_sgcandina_rsg2214.htm" target="_blank" rel="noopener">Resolución 2214 de 2021: lista de verificación y criterios de evaluación armonizados de BPM en productos cosméticos</a>, ítems 77–80. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[5]</span><div>Organización Mundial de la Salud. <a href="https://cdn.who.int/media/docs/default-source/medicines/norms-and-standards/guidelines/inspections/trs1033-annex3-gmp-water-for-pharmaceuticals-use.pdf" target="_blank" rel="noopener">Good manufacturing practices: water for pharmaceutical use. TRS 1033, anexo 3, 2021</a>, secciones 6–15. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[6]</span><div>United States Pharmacopeia. <a href="https://dev.usp.org/frequently-asked-questions/water-pharmaceutical-and-analytical-purposes" target="_blank" rel="noopener">Water for Pharmaceutical and Analytical Purposes: preguntas frecuentes</a>. Monografías de agua y capítulos 643, 645 y 1231. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[7]</span><div>ASME. <a href="https://www.asme.org/codes-standards/find-codes-standards/bioprocessing-equipment" target="_blank" rel="noopener">BPE-2026: Bioprocessing Equipment</a>. Catálogo oficial y alcance publicado. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[8]</span><div>3-A Sanitary Standards, Inc. <a href="https://www.3-a.org/standards" target="_blank" rel="noopener">Catálogo oficial de estándares y prácticas</a>. Requisitos generales, válvulas, elastómeros y plásticos según familia. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[9]</span><div>3-A Sanitary Standards, Inc. <a href="https://my.3-a.org/3-A-Symbol-Certificates/About-the-3-A-Symbol" target="_blank" rel="noopener">About the 3-A Symbol</a>. Alcance del símbolo, verificación por tercero y consulta de autorizaciones. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[10]</span><div>ASTM International. <a href="https://store.astm.org/a0270_a0270m-24.html" target="_blank" rel="noopener">ASTM A270/A270M-24: tubería sanitaria de acero inoxidable</a>. DOI: 10.1520/A0270_A0270M-24. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[11]</span><div>ASTM International. <a href="https://store.astm.org/a0380_a0380m-25.html" target="_blank" rel="noopener">ASTM A380/A380M-25: limpieza, desincrustado, decapado y pasivación de acero inoxidable</a>. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[12]</span><div>ASTM International. <a href="https://store.astm.org/a0967_a0967m-25.html" target="_blank" rel="noopener">ASTM A967/A967M-25: tratamientos químicos de pasivación de componentes de acero inoxidable</a>. DOI: 10.1520/A0967_A0967M-25. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[13]</span><div>ISO. <a href="https://www.iso.org/standard/36437.html" target="_blank" rel="noopener">ISO 22716:2007: Cosmetics — Good Manufacturing Practices</a>. Catálogo oficial; edición confirmada en 2022. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[14]</span><div>Presidencia de la República de Colombia. <a href="https://normograma.invima.gov.co/compilacion/docs/decreto_3249_2006.htm" target="_blank" rel="noopener">Decreto 3249 de 2006 y modificaciones: suplementos dietarios</a>, anexo 1, numeral 5.1. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[15]</span><div>ISO. <a href="https://www.iso.org/standard/63787.html?layout=default" target="_blank" rel="noopener">ISO 45001:2018</a> y <a href="https://www.iso.org/standard/88428.html" target="_blank" rel="noopener">Amd 1:2024</a>. Sistemas de gestión de la seguridad y salud en el trabajo. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[16]</span><div>Ministerio del Trabajo. <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=72173" target="_blank" rel="noopener">Decreto 1072 de 2015: Decreto Único Reglamentario del Sector Trabajo</a>, marco del SG-SST. Gestor Normativo de Función Pública. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[17]</span><div>Ministerio del Trabajo. <a href="https://www.fondoriesgoslaborales.gov.co/sin-categoria/mintrabajo-socializa-resolucion-que-modifica-los-estandares-minimos-del-sistema-de-gestion-en-seguridad-y-salud-en-el-trabajo/" target="_blank" rel="noopener">Resolución 0312 de 2019: estándares mínimos del SG-SST</a>. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[18]</span><div>3-A Sanitary Standards, Inc. <a href="https://www.3-a.org/standards/metal-tubing" target="_blank" rel="noopener">33-03: Metal Tubing</a>. Catálogo y alcance: tubería metálica sanitaria. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[19]</span><div>3-A Sanitary Standards, Inc. <a href="https://www.3-a.org/standards/sanitary-fittings" target="_blank" rel="noopener">63-04: Sanitary Fittings</a>. Catálogo y alcance: accesorios sanitarios. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[20]</span><div>3-A Sanitary Standards, Inc. <a href="https://www.3-a.org/news/nonmetal-surfaces-whats-new" target="_blank" rel="noopener">Nonmetal Surfaces — What's New?</a> Criterios de uso y degradación de superficies no metálicas. Consulta: 19/10/2026.</div></div>
+        <div class="ref-item"><span class="ref-idx">[21]</span><div>JGB. Requerimientos de usuario FO-AS-150 y planos 17-PT-A-G-0017 y 18-PT-A-G-0018, suministrados como documentos base para el diagnóstico del sistema de agua purificada en Cali.</div></div>
+        <div class="ref-item"><span class="ref-idx">[22]</span><div>INVIMA. <a href="https://www.invima.gov.co/cosmeticos-aseo-plaguicidas/cosmeticos" target="_blank" rel="noopener">Cosméticos: marco normativo y preguntas frecuentes</a>. Orientación institucional regulatoria aplicable. Consulta: 19/10/2026.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Proyecto W2608 — Diagnóstico del Sistema de Agua Purificada y Distribución JGB</div>
+        <div>Dirección de Proyecto: Javier Micolta (`J.Micolta`) · Ingeniería Especialista: MSc Jonathan Arboleda (`J.Arboleda` · Identidad gráfica JAGDESING)</div>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.78rem; text-align: right;">
+        <div>Cali, Colombia · Convención documental W2608EETTTNNN</div>
+        <div>Portal técnico de seguimiento · Sin información comercial</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

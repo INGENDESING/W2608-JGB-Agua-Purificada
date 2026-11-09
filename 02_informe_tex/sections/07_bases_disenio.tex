@@ -1,0 +1,137 @@
+\section{Bases de Diseño}
+
+La empresa objeto del estudio es \targetcompany, ubicada en la ciudad de \projectcity. La dirección y las condiciones específicas de la instalación están pendientes de levantamiento.
+
+
+\subsection{Condiciones Ambientales del Sitio}
+\begin{table}[htbp]
+	\centering
+	\caption{Condiciones ambientales del sitio de instalación}
+	\label{tab:environmental_conditions}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}NXclc@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Parámetro Ambiental} & \textbf{Valor} & \textbf{Unidad} & \textbf{Referencia} \\
+		\midrule
+		& Temperatura ambiente máxima & 38.0 & °C & IDEAM 2023 \\
+		& Temperatura ambiente mínima & 15.0 & °C & IDEAM 2023 \\
+		& Temperatura ambiente promedio & 26.5 & °C & IDEAM 2023 \\
+		& Humedad relativa máxima & 85.0 & \% & IDEAM 2023 \\
+		& Humedad relativa mínima & 45.0 & \% & IDEAM 2023 \\
+		& Presión atmosférica & 101.3 & kPa & NOAA 2022 \\
+		& Altitud sobre el nivel del mar & 960 & msnm & IGAC 2021 \\
+		& Velocidad máxima del viento & 120.0 & km/h & Estación local 2022 \\
+		& Dirección predominante del viento & -- & Noreste & Estación local 2022 \\
+		& Coordenadas geográficas (latitud) & -- & 3°27' N & GPS 2023 \\
+		& Coordenadas geográficas (longitud) & -- & 76°31' O & GPS 2023 \\
+		& Zona sísmica & -- & Intermedia & NSR-10 2010 \\
+		& Precipitación máxima anual & 1200.0 & mm & IDEAM 2023 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Especificaciones Fisicoquímicas de Fluidos}
+\begin{table}[htbp]
+	\centering
+	\caption{Propiedades fisicoquímicas del fluido de proceso}
+	\label{tab:fluid_properties}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}NXclc@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Propiedad} & \textbf{Valor} & \textbf{Unidad} & \textbf{Referencia} \\
+		\midrule
+		& Densidad (20 °C) & 875.2 & kg/m³ & ASTM D4052 2022 \\
+		& Densidad (80 °C) & 842.1 & kg/m³ & ASTM D4052 2022 \\
+		& Viscosidad dinámica (20 °C) & 3.25 & mPa·s & ASTM D445 2022 \\
+		& Viscosidad dinámica (80 °C) & 0.85 & mPa·s & ASTM D445 2022 \\
+		& Viscosidad cinemática (20 °C) & 3.71 & mm²/s & ASTM D445 2022 \\
+		& Viscosidad cinemática (80 °C) & 1.01 & mm²/s & ASTM D445 2022 \\
+		& Tensión superficial (20 °C) & 28.5 & mN/m & ASTM D971 2021 \\
+		& Tensión superficial (80 °C) & 22.3 & mN/m & ASTM D971 2021 \\
+		& Presión de vapor (20 °C) & 0.45 & kPa & ASTM D323 2021 \\
+		& Presión de vapor (80 °C) & 47.2 & kPa & ASTM D323 2021 \\
+		& Punto de ebullición & 180.5 & °C & ASTM D86 2020 \\
+		& Punto de inflamación & 85.0 & °C & ASTM D93 2022 \\
+		& PH (solución acuosa) & 7.2 & -- & EPA 8310 2021 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Condiciones de Operación}
+El proceso consiste en el tratamiento y transferencia de fluidos industriales mediante un sistema de bombeo y tuberías diseñado para operar continuamente bajo condiciones controladas. El sistema incluye equipos de procesamiento térmico y mecanismos de control automático para garantizar la eficiencia y seguridad operacional.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Condiciones operacionales de diseño del sistema}
+	\label{tab:operating_conditions}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}NXclc@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Parámetro Operacional} & \textbf{Valor} & \textbf{Unidad} & \textbf{Referencia} \\
+		\midrule
+		& Presión de trabajo máxima & 10.5 & bar & Especificación cliente 2023 \\
+		& Presión de trabajo normal & 8.0 & bar & Diseño base 2022 \\
+		& Temperatura de operación máxima & 85.0 & °C & Especificación cliente 2023 \\
+		& Temperatura de operación normal & 75.0 & °C & Diseño base 2022 \\
+		& Caudal nominal de diseño & 150.0 & m³/h & Requerimientos proceso \\
+		& Caudal mínimo operacional & 90.0 & m³/h & Análisis hidráulico 2022 \\
+		& Caudal máximo operacional & 180.0 & m³/h & Capacidad sistema \\
+		& Capacidad térmica requerida & 850.0 & kW & Balance térmico 2023 \\
+		& Eficiencia térmica mínima & 92.0 & \% & Especificación cliente \\
+		& Factor de seguridad aplicado & 1.5 & -- & ASME B31.3 2022 \\
+		& Tiempo de operación continua & 8760 & h/año & OSHA 1910.119 2021 \\
+		& Nivel de ruido máximo permitido & 85.0 & dB(A) & OSHA 1910.95 2021 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Datos de Objetivos}
+Los objetivos de diseño se establecen para garantizar que el sistema cumpla con los requerimientos de producción y especificaciones técnicas mínimas para una operación segura y eficiente.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Especificaciones de capacidades y objetivos de diseño}
+	\label{tab:design_objectives}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}NXcccc@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Objetivo} & \textbf{Capacidad} & \textbf{Temperatura} & \textbf{Presión} & \textbf{Referencia} \\
+		\multicolumn{1}{c}{} & \textbf{} & \textbf{(m³/h)} & \textbf{(°C)} & \textbf{(bar)} & \textbf{} \\
+		\midrule
+		& Capacidad de diseño base & 150.0 & 75.0 & 8.0 & Especificación cliente 2023 \\
+		& Capacidad máxima & 180.0 & 85.0 & 10.5 & Límite equipo fabricante \\
+		& Capacidad mínima & 90.0 & 60.0 & 5.5 & Análisis hidráulico 2022 \\
+		& Critica de operación & 60.0 & 50.0 & 3.5 & Manual operación \\
+		& Objetivo de rendimiento & 140.0 & 73.0 & 7.8 & Estudio optimización 2023 \\
+		& Optimización energética & 145.0 & 72.0 & 7.5 & Análisis energético 2023 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Especificaciones de Equipos Existentes a Analizar}
+Se han identificado equipos existentes en la instalación que deben ser evaluados para determinar su compatibilidad con las nuevas condiciones operacionales y requisitos de diseño.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Datos técnicos de equipos existentes en la instalación}
+	\label{tab:existing_equipment}
+	\setcounter{itemcount}{0}
+	\begin{tabularx}{\textwidth}{@{}N>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}X@{}}
+		\toprule
+		\multicolumn{1}{c}{\textbf{Item}} & \textbf{Equipo} & \textbf{Fabricante} & \textbf{Modelo} & \textbf{Capacidad} & \textbf{Referencia} \\
+		\multicolumn{1}{c}{} & \textbf{} & \textbf{} & \textbf{} & \textbf{Unidad} & \textbf{Fuente} \\
+		\midrule
+		& Bomba principal & Grundfos & TP 100-250 & 165.0 m³/h & Catálogo Grundfos 2018 \\
+		& Bomba auxiliar & KSB & Etanorm 150-250 & 120.0 m³/h & Especificación técnica KSB \\
+		& Intercambiador 1 & Alfa Laval & TS6-MFG & 180.0 kW & Manual fabricante 2019 \\
+		& Intercambiador 2 & GEA & NT50M & 200.0 kW & Hoja de datos GEA 2020 \\
+		& Tanque principal & Hermasa & TQ-5000 & 5000.0 L & Certificado fabricante 2016 \\
+		& Compresor & Atlas Copco & GA 37 & 15.0 m³/min & Manual operación 2017 \\
+		& Sistema control & Siemens & S7-1200 & 2.5 kW & Documentación proyecto 2021 \\
+		& Válvulas reguladoras & SAMSON & Type 240 & 10 unidades & Orden compra 2018 \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Normativas Aplicables}
+Las normativas y estándares que rigen este proyecto incluyen: ASME B31.3 (Process Piping), API 650 (Welded Tanks for Oil Storage), NFPA 30 (Flammable and Combustible Liquids), IEC 61511 (Functional Safety), ISO 9001 (Quality Management), y OSHA 1910 (Process Safety Management), además de las regulaciones locales de la autoridad ambiental competente.
